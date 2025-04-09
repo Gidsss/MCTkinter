@@ -1,0 +1,8 @@
+cryptography
+markovify
+numpy
+cython
+huffman
+setuptools
+tk
+tqdm
