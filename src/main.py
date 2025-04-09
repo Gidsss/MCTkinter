@@ -143,7 +143,7 @@ class SteganographyApp:
                     target_value = progress['value']
 
                     if target_value > current_value:
-                        # Pause at 99% for dramatic effect
+                        # Pause at 99% 
                         if target_value == 100 and current_value >= 98 and not progress['paused_at_99']:
                             progress['paused_at_99'] = True
                             progress_bar['value'] = 99
