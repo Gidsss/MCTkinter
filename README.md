@@ -31,21 +31,26 @@ The system enhances traditional linguistic steganography by:
 
 ```
 project/
-├── thesis_toolkit.pyx       # Core Cython file for encoders/decoders
-├── app.py                   # Main Tkinter GUI application
-├── db_utils.py              # SQLite-based database helper functions
-├── steganography.db         # Local database for file history
+├── thesis_toolkit.pyx                    # Core Cython source for encoders/decoders
+├── steganography.db                      # Local database for encoded file history
 ├── markov_models/
-│   └── legal_corpus.json    # Pre-trained Markov model for legal documents
-├── outputs/                 # Folder for generated outputs (if needed)
-└── README.md
+│   └── legal_corpus.json                # Pre-trained Markov model for legal documents
+├── media/                               # Optional media assets (if used)
+├── src/
+│   ├── main.py                          # Main Tkinter GUI application
+│   └── db_utils.py                      # SQLite-based database helper functions
+├── venv/                                # Python virtual environment
+├── README.md                            # Project description and usage guide
+├── requirements.txt                     # List of Python dependencies
+├── setup.py                             # Build configuration for Cython
+└── .gitignore                           # Git ignored files
 ```
 
 ## Installation
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.12+
 - pip
 - Cython
 - Required Python packages
