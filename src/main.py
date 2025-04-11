@@ -4,7 +4,7 @@ import time
 import logging
 import threading
 import tkinter as tk
-from tkinter import filedialog, messagebox, ttk
+from tkinter import filedialog, messagebox, ttk, scrolledtext
 from tqdm import tqdm
 
 # Set up logging configuration
@@ -74,29 +74,6 @@ class SteganographyApp:
         self.file_table.delete(*self.file_table.get_children())
         for record in get_all_files():
             self.file_table.insert("", "end", values=(record[1], record[2], record[3], record[4], "View/Decode"))
-
-    # def encode_with_progress(self, encoder, progress_bar, time_label, start_time):
-    #     """Encode with real-time progress updates."""
-    #     while not encoder.finished:
-    #         encoder.step()
-    #         elapsed = time.time() - start_time
-    #         progress = min(int((elapsed / 30) * 100), 100)  # Approximation
-    #         progress_bar['value'] = progress
-    #         time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds")
-    #         progress_bar.update()
-    #     return encoder.output, time.time() - start_time
-
-    # def encode_existing(self, model, bitstream, progress_bar, time_label):
-    #     """Encode using the Existing Algorithm with progress."""
-    #     start_time = time.time()
-    #     encoder = ExistingEncoder(model, bitstream)
-    #     return self.encode_with_progress(encoder, progress_bar, time_label, start_time)
-
-    # def encode_enhanced(self, model, bitstream, progress_bar, time_label):
-    #     """Encode using the Enhanced Algorithm with progress."""
-    #     start_time = time.time()
-    #     encoder = EnhancedEncoder(model, bitstream)
-    #     return self.encode_with_progress(encoder, progress_bar, time_label, start_time)
 
     def upload_and_encode(self):
         """Upload a file and start encoding."""
@@ -222,11 +199,8 @@ class SteganographyApp:
                 messagebox.showerror("Encoding Error", f"Error during encoding: {str(e)}")
                 logging.error(f"Error during encoding: {str(e)}")
 
-
-
-
     def decode_selected(self):
-        """Decode the selected file from the table."""
+        """Open a window to view encoded steganographic text and provide a Decode button."""
         selected_item = self.file_table.selection()
         if not selected_item:
             messagebox.showwarning("Selection Error", "Please select a file from the table.")
@@ -235,52 +209,157 @@ class SteganographyApp:
         file_name = self.file_table.item(selected_item, "values")[0]
 
         try:
-            # Retrieve encoded plain text from the database
-            records = get_all_files()
             encoded_text = get_encoded_text(file_name, "encode")
-
             if not encoded_text:
                 messagebox.showwarning("Data Not Found", "Encoded text not found in the database.")
                 return
 
-            # Ensure encoded text is plain text
-            encoded_text = encoded_text.strip()
+            # Show the encoded text and a Decode button
+            self.show_encoded_viewer_paginated(encoded_text.strip(), file_name)
 
-            start_time = time.time()
-
-            # Select the appropriate decoder based on the algorithm
-            decoder = ExistingDecoder(model, encoded_text) if self.algorithm.get() == "Existing Algorithm" else EnhancedDecoder(model, encoded_text)
-
-            # Perform decoding step by step
-            while not decoder.finished:
-                decoder.step()
-
-            # Get the decoded text (binary bitstream)
-            decoded_text = decoder.solve()
-            elapsed = time.time() - start_time
-
-            # Display the encoded plain text as it is the steganographic text
-            self.show_decoded_text(encoded_text, file_name, elapsed)
-            messagebox.showinfo("Decoding Complete", f"Decoding finished.\nTime Elapsed: {elapsed:.2f} seconds")
-            logging.info(f"Decoding completed for file: {file_name}")
         except Exception as e:
-            messagebox.showerror("Decoding Error", f"Error during decoding: {str(e)}")
-            logging.error(f"Error during decoding: {str(e)}")
+            messagebox.showerror("View Error", f"Error retrieving encoded text: {str(e)}")
+            logging.error(f"Error retrieving encoded text: {str(e)}")
 
+    def show_encoded_viewer_paginated(self, encoded_text, file_name):
+        """Paginated display of long encoded text with navigation buttons."""
+        words = encoded_text.split()
+        page_size = 5000
+        pages = [" ".join(words[i:i+page_size]) for i in range(0, len(words), page_size)]
+        total_pages = len(pages)
+        current_page = tk.IntVar(value=0)
 
+        window = tk.Toplevel(self.root)
+        window.title(f"Encoded Text: {file_name}")
+        window.geometry("800x600")
 
-    def show_decoded_text(self, encoded_text, file_name, elapsed):
-        """Show the encoded steganographic text in a new window."""
-        result_window = tk.Toplevel(self.root)
-        result_window.title("Decoded Steganographic Text")
-        result_window.geometry("700x500")
-        path_label = tk.Label(result_window, text=f"Decoded from: {file_name}\nTime Elapsed: {elapsed:.2f} seconds")
-        path_label.pack(pady=5)
-        text_box = tk.Text(result_window, wrap=tk.WORD, height=25, width=80)
-        text_box.insert(tk.END, encoded_text)
-        text_box.pack(pady=10)
-        close_button = tk.Button(result_window, text="Close", command=result_window.destroy)
-        close_button.pack(pady=5)
+        label = tk.Label(window, text=f"Encoded from: {file_name}", font=("Arial", 10))
+        label.pack(pady=5)
+
+        # Text Display
+        text_box = scrolledtext.ScrolledText(window, wrap=tk.WORD, width=100, height=25)
+        text_box.pack(padx=10, pady=5, fill=tk.BOTH, expand=True)
+
+        def update_text():
+            index = current_page.get()
+            text_box.config(state=tk.NORMAL)
+            text_box.delete("1.0", tk.END)
+            text_box.insert(tk.END, pages[index])
+            text_box.config(state=tk.DISABLED)
+            page_label.config(text=f"Page {index + 1} of {total_pages}")
+
+        # Navigation Controls
+        nav_frame = tk.Frame(window)
+        nav_frame.pack(pady=10)
+
+        def prev_page():
+            if current_page.get() > 0:
+                current_page.set(current_page.get() - 1)
+                update_text()
+
+        def next_page():
+            if current_page.get() < total_pages - 1:
+                current_page.set(current_page.get() + 1)
+                update_text()
+
+        tk.Button(nav_frame, text="Previous", command=prev_page).pack(side=tk.LEFT, padx=10)
+        page_label = tk.Label(nav_frame, text="")
+        page_label.pack(side=tk.LEFT)
+        tk.Button(nav_frame, text="Next", command=next_page).pack(side=tk.LEFT, padx=10)
+
+        # Decode + Close buttons
+        button_frame = tk.Frame(window)
+        button_frame.pack(pady=10)
+
+        tk.Button(button_frame, text="Decode", command=lambda: [window.destroy(), self.start_decoding_with_progress(encoded_text, file_name)]).pack(side=tk.LEFT, padx=10)
+        tk.Button(button_frame, text="Close", command=window.destroy).pack(side=tk.LEFT)
+
+        update_text()
+
+    def start_decoding_with_progress(self, encoded_text, file_name):
+        """Decode with progress bar and display result file + metrics."""
+        algorithm = self.algorithm.get()
+
+        progress_window = tk.Toplevel(self.root)
+        progress_window.title("Decoding Progress")
+        progress_window.geometry("400x150")
+
+        progress_label = tk.Label(progress_window, text="Decoding in progress...")
+        progress_label.pack(pady=5)
+
+        time_label = tk.Label(progress_window, text="Time Elapsed: 0.00 seconds | 0%")
+        time_label.pack(pady=5)
+
+        progress_bar = ttk.Progressbar(progress_window, length=300, mode="determinate")
+        progress_bar.pack(pady=10)
+
+        progress = {'value': 0, 'finished': False}
+        start_time = time.time()
+
+        def update_progress_bar():
+            if progress['finished']:
+                return
+            elapsed = time.time() - start_time
+            progress_bar['value'] = progress['value']
+            time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | {progress['value']}%")
+            self.root.update_idletasks()
+            self.root.after(100, update_progress_bar)
+
+        def decode_task():
+            try:
+                decoder = ExistingDecoder(model, encoded_text) if algorithm == "Existing Algorithm" else EnhancedDecoder(model, encoded_text)
+                total_tokens = len(encoded_text.split(" "))
+                decoded_bits = ""
+
+                while not decoder.finished:
+                    decoder.step()
+                    progress['value'] = min(int((decoder.index / total_tokens) * 100), 100)
+
+                decoded_bits = decoder.solve()
+                elapsed = time.time() - start_time
+
+                output_path = os.path.join(OUTPUT_DIR, f"decoded_{file_name}")
+                bitstream_to_file(decoded_bits, output_path)
+
+                progress['value'] = 100
+                progress['finished'] = True
+                progress_window.destroy()
+                self.show_decoded_file(output_path, elapsed)
+
+            except Exception as e:
+                progress_window.destroy()
+                messagebox.showerror("Decoding Error", f"Error during decoding: {str(e)}")
+                logging.error(f"Error during decoding: {str(e)}")
+
+        self.root.after(100, update_progress_bar)
+        threading.Thread(target=decode_task, daemon=True).start()
+
+    def show_decoded_file(self, filepath, elapsed):
+        """Display decoded file metrics and success info."""
+        window = tk.Toplevel(self.root)
+        window.title("Decoded File and Metrics")
+        window.geometry("600x300")
+
+        label = tk.Label(window, text=f"Decoded File: {filepath}\nTime Elapsed: {elapsed:.2f} seconds", font=("Arial", 10))
+        label.pack(pady=10)
+
+        metrics_frame = tk.Frame(window)
+        metrics_frame.pack(pady=5)
+
+        tk.Label(metrics_frame, text="Decoding Speed:", anchor="w", width=25).grid(row=0, column=0, sticky="w")
+        tk.Label(metrics_frame, text="Placeholder").grid(row=0, column=1, sticky="w")
+
+        tk.Label(metrics_frame, text="Embedding Rate:", anchor="w", width=25).grid(row=1, column=0, sticky="w")
+        tk.Label(metrics_frame, text="Placeholder").grid(row=1, column=1, sticky="w")
+
+        tk.Label(metrics_frame, text="Validity Check:", anchor="w", width=25).grid(row=2, column=0, sticky="w")
+        tk.Label(metrics_frame, text="Placeholder").grid(row=2, column=1, sticky="w")
+
+        open_btn = tk.Button(window, text="Open File", command=lambda: os.startfile(filepath))
+        open_btn.pack(pady=10)
+
+        close_btn = tk.Button(window, text="Close", command=window.destroy)
+        close_btn.pack(pady=5)
 
 if __name__ == "__main__":
     root = tk.Tk()

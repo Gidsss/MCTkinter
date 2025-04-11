@@ -1783,7 +1783,7 @@ struct __pyx_obj_14thesis_toolkit_EnhancedDecoder {
 };
 
 
-/* "thesis_toolkit.pyx":337
+/* "thesis_toolkit.pyx":342
  * 
  * # -- Existing Algorithms --
  * cdef class ExistingEncoder:             # <<<<<<<<<<<<<<
@@ -1804,7 +1804,7 @@ struct __pyx_obj_14thesis_toolkit_ExistingEncoder {
 };
 
 
-/* "thesis_toolkit.pyx":443
+/* "thesis_toolkit.pyx":448
  *         return self.output
  * 
  * cdef class ExistingDecoder:             # <<<<<<<<<<<<<<
@@ -3328,6 +3328,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedEncoder_16_get_transitions(
 static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedEncoder_18__reduce_cython__(struct __pyx_obj_14thesis_toolkit_EnhancedEncoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedEncoder_20__setstate_cython__(struct __pyx_obj_14thesis_toolkit_EnhancedEncoder *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_14thesis_toolkit_15EnhancedDecoder___init__(struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *__pyx_v_self, PyObject *__pyx_v_model, PyObject *__pyx_v_stega_text); /* proto */
+static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_5index___get__(struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6output___get__(struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8finished___get__(struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *__pyx_v_self); /* proto */
@@ -3348,6 +3349,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6generate(struct __
 static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_8__reduce_cython__(struct __pyx_obj_14thesis_toolkit_ExistingEncoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_10__setstate_cython__(struct __pyx_obj_14thesis_toolkit_ExistingEncoder *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj_14thesis_toolkit_ExistingDecoder *__pyx_v_self, PyObject *__pyx_v_model, PyObject *__pyx_v_stega_text); /* proto */
+static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_5index___get__(struct __pyx_obj_14thesis_toolkit_ExistingDecoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_6output___get__(struct __pyx_obj_14thesis_toolkit_ExistingDecoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_8finished___get__(struct __pyx_obj_14thesis_toolkit_ExistingDecoder *__pyx_v_self); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda3(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_n); /* proto */
@@ -11953,6 +11955,71 @@ static int __pyx_pf_14thesis_toolkit_15EnhancedDecoder___init__(struct __pyx_obj
  *         self.endkey = 0
  * 
  *     @property             # <<<<<<<<<<<<<<
+ *     def index(self):
+ *         """Expose current decoding index for progress tracking."""
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_14thesis_toolkit_15EnhancedDecoder_5index_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_14thesis_toolkit_15EnhancedDecoder_5index_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_14thesis_toolkit_15EnhancedDecoder_5index___get__(((struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_5index___get__(struct __pyx_obj_14thesis_toolkit_EnhancedDecoder *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 1);
+
+  /* "thesis_toolkit.pyx":222
+ *     def index(self):
+ *         """Expose current decoding index for progress tracking."""
+ *         return self.index             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "thesis_toolkit.pyx":219
+ *         self.endkey = 0
+ * 
+ *     @property             # <<<<<<<<<<<<<<
+ *     def index(self):
+ *         """Expose current decoding index for progress tracking."""
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("thesis_toolkit.EnhancedDecoder.index.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "thesis_toolkit.pyx":224
+ *         return self.index
+ * 
+ *     @property             # <<<<<<<<<<<<<<
  *     def output(self):
  *         return self.output
  */
@@ -11977,7 +12044,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6output___get__(str
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "thesis_toolkit.pyx":221
+  /* "thesis_toolkit.pyx":226
  *     @property
  *     def output(self):
  *         return self.output             # <<<<<<<<<<<<<<
@@ -11989,8 +12056,8 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6output___get__(str
   __pyx_r = __pyx_v_self->output;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":219
- *         self.endkey = 0
+  /* "thesis_toolkit.pyx":224
+ *         return self.index
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def output(self):
@@ -12004,7 +12071,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6output___get__(str
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":223
+/* "thesis_toolkit.pyx":228
  *         return self.output
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -12036,7 +12103,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8finished___get__(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "thesis_toolkit.pyx":225
+  /* "thesis_toolkit.pyx":230
  *     @property
  *     def finished(self):
  *         return self.finished             # <<<<<<<<<<<<<<
@@ -12044,13 +12111,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8finished___get__(s
  *     def _get_entrypoints(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->finished); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->finished); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":223
+  /* "thesis_toolkit.pyx":228
  *         return self.output
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -12069,7 +12136,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8finished___get__(s
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":227
+/* "thesis_toolkit.pyx":232
  *         return self.finished
  * 
  *     def _get_entrypoints(self):             # <<<<<<<<<<<<<<
@@ -12140,20 +12207,20 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_entrypoints", 1);
 
-  /* "thesis_toolkit.pyx":229
+  /* "thesis_toolkit.pyx":234
  *     def _get_entrypoints(self):
  *         """Get valid entry points from the Markov model."""
  *         if self.model.state_size == 1:             # <<<<<<<<<<<<<<
  *             return [key for key in self.model.chain.model.get(("___BEGIN__",)).keys()]
  *         else:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_1, __pyx_int_1, 1, 0)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 229, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_1, __pyx_int_1, 1, 0)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 234, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "thesis_toolkit.pyx":230
+    /* "thesis_toolkit.pyx":235
  *         """Get valid entry points from the Markov model."""
  *         if self.model.state_size == 1:
  *             return [key for key in self.model.chain.model.get(("___BEGIN__",)).keys()]             # <<<<<<<<<<<<<<
@@ -12162,15 +12229,15 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
  */
     __Pyx_XDECREF(__pyx_r);
     { /* enter inner scope */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L6_error)
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_4 = 0;
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 230, __pyx_L6_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 235, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_model); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 230, __pyx_L6_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_model); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 235, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_get); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 230, __pyx_L6_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_get); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 235, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_9 = NULL;
@@ -12191,15 +12258,15 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
         PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_tuple__5};
         __pyx_t_7 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 230, __pyx_L6_error)
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 235, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       if (unlikely(__pyx_t_7 == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "keys");
-        __PYX_ERR(0, 230, __pyx_L6_error)
+        __PYX_ERR(0, 235, __pyx_L6_error)
       }
-      __pyx_t_8 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_5), (&__pyx_t_6)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 230, __pyx_L6_error)
+      __pyx_t_8 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_5), (&__pyx_t_6)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 235, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF(__pyx_t_3);
@@ -12208,11 +12275,11 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
       while (1) {
         __pyx_t_11 = __Pyx_dict_iter_next(__pyx_t_3, __pyx_t_5, &__pyx_t_4, &__pyx_t_8, NULL, NULL, __pyx_t_6);
         if (unlikely(__pyx_t_11 == 0)) break;
-        if (unlikely(__pyx_t_11 == -1)) __PYX_ERR(0, 230, __pyx_L6_error)
+        if (unlikely(__pyx_t_11 == -1)) __PYX_ERR(0, 235, __pyx_L6_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_XDECREF_SET(__pyx_8genexpr5__pyx_v_key, __pyx_t_8);
         __pyx_t_8 = 0;
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_8genexpr5__pyx_v_key))) __PYX_ERR(0, 230, __pyx_L6_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_8genexpr5__pyx_v_key))) __PYX_ERR(0, 235, __pyx_L6_error)
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF(__pyx_8genexpr5__pyx_v_key); __pyx_8genexpr5__pyx_v_key = 0;
@@ -12226,7 +12293,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "thesis_toolkit.pyx":229
+    /* "thesis_toolkit.pyx":234
  *     def _get_entrypoints(self):
  *         """Get valid entry points from the Markov model."""
  *         if self.model.state_size == 1:             # <<<<<<<<<<<<<<
@@ -12235,7 +12302,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
  */
   }
 
-  /* "thesis_toolkit.pyx":232
+  /* "thesis_toolkit.pyx":237
  *             return [key for key in self.model.chain.model.get(("___BEGIN__",)).keys()]
  *         else:
  *             return [key[-1] for key in self.model.chain.model.keys() if key.count("___BEGIN__") == self.model.state_size - 1][1:]             # <<<<<<<<<<<<<<
@@ -12245,19 +12312,19 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
   /*else*/ {
     __Pyx_XDECREF(__pyx_r);
     { /* enter inner scope */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L12_error)
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_5 = 0;
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L12_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 237, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_model); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 232, __pyx_L12_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_model); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (unlikely(__pyx_t_7 == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "keys");
-        __PYX_ERR(0, 232, __pyx_L12_error)
+        __PYX_ERR(0, 237, __pyx_L12_error)
       }
-      __pyx_t_8 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_4), (&__pyx_t_6)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L12_error)
+      __pyx_t_8 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_4), (&__pyx_t_6)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 237, __pyx_L12_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_XDECREF(__pyx_t_3);
@@ -12266,11 +12333,11 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
       while (1) {
         __pyx_t_11 = __Pyx_dict_iter_next(__pyx_t_3, __pyx_t_4, &__pyx_t_5, &__pyx_t_8, NULL, NULL, __pyx_t_6);
         if (unlikely(__pyx_t_11 == 0)) break;
-        if (unlikely(__pyx_t_11 == -1)) __PYX_ERR(0, 232, __pyx_L12_error)
+        if (unlikely(__pyx_t_11 == -1)) __PYX_ERR(0, 237, __pyx_L12_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_XDECREF_SET(__pyx_8genexpr6__pyx_v_key, __pyx_t_8);
         __pyx_t_8 = 0;
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_8genexpr6__pyx_v_key, __pyx_n_s_count); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 232, __pyx_L12_error)
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_8genexpr6__pyx_v_key, __pyx_n_s_count); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L12_error)
         __Pyx_GOTREF(__pyx_t_7);
         __pyx_t_9 = NULL;
         __pyx_t_10 = 0;
@@ -12290,24 +12357,24 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
           PyObject *__pyx_callargs[2] = {__pyx_t_9, __pyx_n_s_BEGIN};
           __pyx_t_8 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_10, 1+__pyx_t_10);
           __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 232, __pyx_L12_error)
+          if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 237, __pyx_L12_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
-        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 232, __pyx_L12_error)
+        __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L12_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_9 = __Pyx_PyInt_SubtractObjC(__pyx_t_7, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 232, __pyx_L12_error)
+        __pyx_t_9 = __Pyx_PyInt_SubtractObjC(__pyx_t_7, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 237, __pyx_L12_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = PyObject_RichCompare(__pyx_t_8, __pyx_t_9, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 232, __pyx_L12_error)
+        __pyx_t_7 = PyObject_RichCompare(__pyx_t_8, __pyx_t_9, Py_EQ); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L12_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-        __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 232, __pyx_L12_error)
+        __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 237, __pyx_L12_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         if (__pyx_t_2) {
-          __pyx_t_7 = __Pyx_GetItemInt(__pyx_8genexpr6__pyx_v_key, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 232, __pyx_L12_error)
+          __pyx_t_7 = __Pyx_GetItemInt(__pyx_8genexpr6__pyx_v_key, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 237, __pyx_L12_error)
           __Pyx_GOTREF(__pyx_t_7);
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 232, __pyx_L12_error)
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 237, __pyx_L12_error)
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         }
       }
@@ -12319,7 +12386,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
       goto __pyx_L1_error;
       __pyx_L16_exit_scope:;
     } /* exit inner scope */
-    __pyx_t_3 = __Pyx_PyList_GetSlice(__pyx_t_1, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 232, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyList_GetSlice(__pyx_t_1, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 237, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_3;
@@ -12327,7 +12394,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
     goto __pyx_L0;
   }
 
-  /* "thesis_toolkit.pyx":227
+  /* "thesis_toolkit.pyx":232
  *         return self.finished
  * 
  *     def _get_entrypoints(self):             # <<<<<<<<<<<<<<
@@ -12352,7 +12419,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_2_get_entrypoints(s
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":234
+/* "thesis_toolkit.pyx":239
  *             return [key[-1] for key in self.model.chain.model.keys() if key.count("___BEGIN__") == self.model.state_size - 1][1:]
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -12417,7 +12484,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("step", 1);
 
-  /* "thesis_toolkit.pyx":242
+  /* "thesis_toolkit.pyx":247
  * 
  *         # Finish if index is at the end of the stega text
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:             # <<<<<<<<<<<<<<
@@ -12428,9 +12495,9 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
   __Pyx_INCREF(__pyx_t_2);
   if (unlikely(__pyx_t_2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 242, __pyx_L1_error)
+    __PYX_ERR(0, 247, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 242, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 247, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_v_self->index >= (__pyx_t_3 - 1));
   if (__pyx_t_4) {
@@ -12443,7 +12510,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "thesis_toolkit.pyx":243
+    /* "thesis_toolkit.pyx":248
  *         # Finish if index is at the end of the stega text
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
  *             self.finished = True             # <<<<<<<<<<<<<<
@@ -12452,7 +12519,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
  */
     __pyx_v_self->finished = 1;
 
-    /* "thesis_toolkit.pyx":244
+    /* "thesis_toolkit.pyx":249
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
  *             self.finished = True
  *             return 1             # <<<<<<<<<<<<<<
@@ -12464,7 +12531,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
     __pyx_r = __pyx_int_1;
     goto __pyx_L0;
 
-    /* "thesis_toolkit.pyx":242
+    /* "thesis_toolkit.pyx":247
  * 
  *         # Finish if index is at the end of the stega text
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:             # <<<<<<<<<<<<<<
@@ -12473,7 +12540,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
  */
   }
 
-  /* "thesis_toolkit.pyx":246
+  /* "thesis_toolkit.pyx":251
  *             return 1
  * 
  *         if self.exhausted:             # <<<<<<<<<<<<<<
@@ -12482,14 +12549,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
  */
   if (__pyx_v_self->exhausted) {
 
-    /* "thesis_toolkit.pyx":247
+    /* "thesis_toolkit.pyx":252
  * 
  *         if self.exhausted:
  *             self._choose_entrypoint()             # <<<<<<<<<<<<<<
  *         else:
  *             self._choose_next_token()
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_choose_entrypoint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 247, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_choose_entrypoint); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 252, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -12509,13 +12576,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 247, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 252, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":246
+    /* "thesis_toolkit.pyx":251
  *             return 1
  * 
  *         if self.exhausted:             # <<<<<<<<<<<<<<
@@ -12525,7 +12592,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
     goto __pyx_L6;
   }
 
-  /* "thesis_toolkit.pyx":249
+  /* "thesis_toolkit.pyx":254
  *             self._choose_entrypoint()
  *         else:
  *             self._choose_next_token()             # <<<<<<<<<<<<<<
@@ -12533,7 +12600,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
  *         return self.index / len(self.stega_text)
  */
   /*else*/ {
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_choose_next_token); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 249, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_choose_next_token); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 254, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -12553,7 +12620,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_6, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 249, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -12561,7 +12628,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
   }
   __pyx_L6:;
 
-  /* "thesis_toolkit.pyx":251
+  /* "thesis_toolkit.pyx":256
  *             self._choose_next_token()
  * 
  *         return self.index / len(self.stega_text)             # <<<<<<<<<<<<<<
@@ -12573,21 +12640,21 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
   __Pyx_INCREF(__pyx_t_2);
   if (unlikely(__pyx_t_2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 251, __pyx_L1_error)
+    __PYX_ERR(0, 256, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (unlikely(__pyx_t_3 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 251, __pyx_L1_error)
+    __PYX_ERR(0, 256, __pyx_L1_error)
   }
-  __pyx_t_2 = PyFloat_FromDouble((((double)__pyx_v_self->index) / ((double)__pyx_t_3))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble((((double)__pyx_v_self->index) / ((double)__pyx_t_3))); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 256, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":234
+  /* "thesis_toolkit.pyx":239
  *             return [key[-1] for key in self.model.chain.model.keys() if key.count("___BEGIN__") == self.model.state_size - 1][1:]
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -12608,7 +12675,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_4step(struct __pyx_
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":254
+/* "thesis_toolkit.pyx":259
  * 
  * 
  *     def _choose_entrypoint(self):             # <<<<<<<<<<<<<<
@@ -12680,7 +12747,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_choose_entrypoint", 1);
 
-  /* "thesis_toolkit.pyx":256
+  /* "thesis_toolkit.pyx":261
  *     def _choose_entrypoint(self):
  *         """Choose a new starting point (entrypoint) for the Markov chain."""
  *         self.exhausted = False             # <<<<<<<<<<<<<<
@@ -12689,7 +12756,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
  */
   __pyx_v_self->exhausted = 0;
 
-  /* "thesis_toolkit.pyx":257
+  /* "thesis_toolkit.pyx":262
  *         """Choose a new starting point (entrypoint) for the Markov chain."""
  *         self.exhausted = False
  *         token = self.stega_text[self.index]             # <<<<<<<<<<<<<<
@@ -12698,49 +12765,49 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
  */
   if (unlikely(__pyx_v_self->stega_text == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 257, __pyx_L1_error)
+    __PYX_ERR(0, 262, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_v_self->index, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 257, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_v_self->index, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_token = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":260
+  /* "thesis_toolkit.pyx":265
  * 
  *         # Check for end key
  *         if token not in self.entrypoints:             # <<<<<<<<<<<<<<
  *             self.endkey = ord(token[-1]) - 97
  *             token = token[:-1]
  */
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_v_token, __pyx_v_self->entrypoints, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 260, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_v_token, __pyx_v_self->entrypoints, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 265, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "thesis_toolkit.pyx":261
+    /* "thesis_toolkit.pyx":266
  *         # Check for end key
  *         if token not in self.entrypoints:
  *             self.endkey = ord(token[-1]) - 97             # <<<<<<<<<<<<<<
  *             token = token[:-1]
  * 
  */
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_token, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_token, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_Ord(__pyx_t_1); if (unlikely(__pyx_t_3 == ((long)(long)(Py_UCS4)-1))) __PYX_ERR(0, 261, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Ord(__pyx_t_1); if (unlikely(__pyx_t_3 == ((long)(long)(Py_UCS4)-1))) __PYX_ERR(0, 266, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_self->endkey = (__pyx_t_3 - 97);
 
-    /* "thesis_toolkit.pyx":262
+    /* "thesis_toolkit.pyx":267
  *         if token not in self.entrypoints:
  *             self.endkey = ord(token[-1]) - 97
  *             token = token[:-1]             # <<<<<<<<<<<<<<
  * 
  *         embedded_index = self.entrypoints.index(token)
  */
-    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_token, 0, -1L, NULL, NULL, &__pyx_slice__7, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_token, 0, -1L, NULL, NULL, &__pyx_slice__7, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 267, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF_SET(__pyx_v_token, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "thesis_toolkit.pyx":260
+    /* "thesis_toolkit.pyx":265
  * 
  *         # Check for end key
  *         if token not in self.entrypoints:             # <<<<<<<<<<<<<<
@@ -12749,14 +12816,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
  */
   }
 
-  /* "thesis_toolkit.pyx":264
+  /* "thesis_toolkit.pyx":269
  *             token = token[:-1]
  * 
  *         embedded_index = self.entrypoints.index(token)             # <<<<<<<<<<<<<<
  *         bit_length = ceil(log2(len(self.entrypoints)))
  *         if len(self.entrypoints) < 2 ** bit_length:
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->entrypoints, __pyx_n_s_index); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->entrypoints, __pyx_n_s_index); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -12776,33 +12843,33 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
     PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_v_token};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 264, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_v_embedded_index = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":265
+  /* "thesis_toolkit.pyx":270
  * 
  *         embedded_index = self.entrypoints.index(token)
  *         bit_length = ceil(log2(len(self.entrypoints)))             # <<<<<<<<<<<<<<
  *         if len(self.entrypoints) < 2 ** bit_length:
  *             bit_length -= 1
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_ceil); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 265, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_ceil); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_log2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 265, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_log2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_8 = __pyx_v_self->entrypoints;
   __Pyx_INCREF(__pyx_t_8);
   if (unlikely(__pyx_t_8 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 265, __pyx_L1_error)
+    __PYX_ERR(0, 270, __pyx_L1_error)
   }
-  __pyx_t_9 = __Pyx_PyList_GET_SIZE(__pyx_t_8); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 265, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyList_GET_SIZE(__pyx_t_8); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 265, __pyx_L1_error)
+  __pyx_t_8 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 270, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_10 = NULL;
   __pyx_t_6 = 0;
@@ -12823,7 +12890,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
     __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 265, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
@@ -12846,14 +12913,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_v_bit_length = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":266
+  /* "thesis_toolkit.pyx":271
  *         embedded_index = self.entrypoints.index(token)
  *         bit_length = ceil(log2(len(self.entrypoints)))
  *         if len(self.entrypoints) < 2 ** bit_length:             # <<<<<<<<<<<<<<
@@ -12864,34 +12931,34 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
   __Pyx_INCREF(__pyx_t_1);
   if (unlikely(__pyx_t_1 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 266, __pyx_L1_error)
+    __PYX_ERR(0, 271, __pyx_L1_error)
   }
-  __pyx_t_9 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 271, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyNumber_PowerOf2(__pyx_int_2, __pyx_v_bit_length, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyNumber_PowerOf2(__pyx_int_2, __pyx_v_bit_length, Py_None); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_5 = PyObject_RichCompare(__pyx_t_1, __pyx_t_4, Py_LT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 271, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 266, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 271, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_2) {
 
-    /* "thesis_toolkit.pyx":267
+    /* "thesis_toolkit.pyx":272
  *         bit_length = ceil(log2(len(self.entrypoints)))
  *         if len(self.entrypoints) < 2 ** bit_length:
  *             bit_length -= 1             # <<<<<<<<<<<<<<
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 1 else bit_length
  *         bit_string = bin(embedded_index)[2:].zfill(bit_length)
  */
-    __pyx_t_5 = __Pyx_PyInt_SubtractObjC(__pyx_v_bit_length, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 267, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_SubtractObjC(__pyx_v_bit_length, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 272, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF_SET(__pyx_v_bit_length, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "thesis_toolkit.pyx":266
+    /* "thesis_toolkit.pyx":271
  *         embedded_index = self.entrypoints.index(token)
  *         bit_length = ceil(log2(len(self.entrypoints)))
  *         if len(self.entrypoints) < 2 ** bit_length:             # <<<<<<<<<<<<<<
@@ -12900,7 +12967,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
  */
   }
 
-  /* "thesis_toolkit.pyx":268
+  /* "thesis_toolkit.pyx":273
  *         if len(self.entrypoints) < 2 ** bit_length:
  *             bit_length -= 1
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 1 else bit_length             # <<<<<<<<<<<<<<
@@ -12911,13 +12978,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
   __Pyx_INCREF(__pyx_t_4);
   if (unlikely(__pyx_t_4 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 268, __pyx_L1_error)
+    __PYX_ERR(0, 273, __pyx_L1_error)
   }
-  __pyx_t_9 = __Pyx_PyList_GET_SIZE(__pyx_t_4); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 268, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyList_GET_SIZE(__pyx_t_4); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 273, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_2 = (__pyx_v_self->index == (__pyx_t_9 - 1));
   if (__pyx_t_2) {
-    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->endkey); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 268, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_self->endkey); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 273, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __pyx_t_5 = __pyx_t_4;
     __pyx_t_4 = 0;
@@ -12928,19 +12995,19 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
   __Pyx_DECREF_SET(__pyx_v_bit_length, __pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "thesis_toolkit.pyx":269
+  /* "thesis_toolkit.pyx":274
  *             bit_length -= 1
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 1 else bit_length
  *         bit_string = bin(embedded_index)[2:].zfill(bit_length)             # <<<<<<<<<<<<<<
  * 
  *         self.current_gram = (token,) if self.model.state_size == 1 else (*["___BEGIN__"] * (self.model.state_size - 1), token)
  */
-  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_bin, __pyx_v_embedded_index); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_bin, __pyx_v_embedded_index); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_t_4, 2, 0, NULL, NULL, &__pyx_slice__8, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_t_4, 2, 0, NULL, NULL, &__pyx_slice__8, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zfill); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zfill); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -12961,44 +13028,44 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
     PyObject *__pyx_callargs[2] = {__pyx_t_1, __pyx_v_bit_length};
     __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_6, 1+__pyx_t_6);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 269, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 274, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_v_bit_string = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "thesis_toolkit.pyx":271
+  /* "thesis_toolkit.pyx":276
  *         bit_string = bin(embedded_index)[2:].zfill(bit_length)
  * 
  *         self.current_gram = (token,) if self.model.state_size == 1 else (*["___BEGIN__"] * (self.model.state_size - 1), token)             # <<<<<<<<<<<<<<
  * 
  *         # Add bit string to output
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_4, __pyx_int_1, 1, 0)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 271, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PyInt_BoolEqObjC(__pyx_t_4, __pyx_int_1, 1, 0)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(0, 276, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (__pyx_t_2) {
-    __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_v_token);
     __Pyx_GIVEREF(__pyx_v_token);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_token)) __PYX_ERR(0, 271, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_token)) __PYX_ERR(0, 276, __pyx_L1_error);
     __pyx_t_5 = __pyx_t_4;
     __pyx_t_4 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_state_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_t_1, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 271, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyInt_SubtractObjC(__pyx_t_1, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 276, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_n_s_BEGIN);
     __Pyx_GIVEREF(__pyx_n_s_BEGIN);
-    if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_BEGIN)) __PYX_ERR(0, 271, __pyx_L1_error);
-    { PyObject* __pyx_temp = PyNumber_InPlaceMultiply(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_temp)) __PYX_ERR(0, 271, __pyx_L1_error)
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_BEGIN)) __PYX_ERR(0, 276, __pyx_L1_error);
+    { PyObject* __pyx_temp = PyNumber_InPlaceMultiply(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_temp)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_temp);
       __Pyx_DECREF(__pyx_t_1);
       __pyx_t_1 = __pyx_temp;
@@ -13006,11 +13073,11 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_4 = __pyx_t_1;
     __pyx_t_1 = 0;
-    if (__Pyx_ListComp_Append(__pyx_t_4, __pyx_v_token) < 0) __PYX_ERR(0, 271, __pyx_L1_error)
+    if (__Pyx_ListComp_Append(__pyx_t_4, __pyx_v_token) < 0) __PYX_ERR(0, 276, __pyx_L1_error)
     {
       PyObject *__pyx_temp = PyList_AsTuple(__pyx_t_4);
       __Pyx_DECREF(__pyx_t_4);
-      __pyx_t_4 = __pyx_temp; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 271, __pyx_L1_error)
+      __pyx_t_4 = __pyx_temp; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 276, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
     }
     __pyx_t_5 = __pyx_t_4;
@@ -13022,23 +13089,23 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
   __pyx_v_self->current_gram = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "thesis_toolkit.pyx":274
+  /* "thesis_toolkit.pyx":279
  * 
  *         # Add bit string to output
  *         self.output += bit_string             # <<<<<<<<<<<<<<
  * 
  *     def _choose_next_token(self):
  */
-  __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_v_self->output, __pyx_v_bit_string); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_t_5 = PyNumber_InPlaceAdd(__pyx_v_self->output, __pyx_v_bit_string); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (!(likely(PyString_CheckExact(__pyx_t_5))||((__pyx_t_5) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_5))) __PYX_ERR(0, 274, __pyx_L1_error)
+  if (!(likely(PyString_CheckExact(__pyx_t_5))||((__pyx_t_5) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_5))) __PYX_ERR(0, 279, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_5);
   __Pyx_GOTREF(__pyx_v_self->output);
   __Pyx_DECREF(__pyx_v_self->output);
   __pyx_v_self->output = ((PyObject*)__pyx_t_5);
   __pyx_t_5 = 0;
 
-  /* "thesis_toolkit.pyx":254
+  /* "thesis_toolkit.pyx":259
  * 
  * 
  *     def _choose_entrypoint(self):             # <<<<<<<<<<<<<<
@@ -13068,7 +13135,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_6_choose_entrypoint
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":276
+/* "thesis_toolkit.pyx":281
  *         self.output += bit_string
  * 
  *     def _choose_next_token(self):             # <<<<<<<<<<<<<<
@@ -13147,14 +13214,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_choose_next_token", 1);
 
-  /* "thesis_toolkit.pyx":278
+  /* "thesis_toolkit.pyx":283
  *     def _choose_next_token(self):
  *         """Choose the next token in the Markov chain."""
  *         transitions = self._get_transitions(self.current_gram)             # <<<<<<<<<<<<<<
  *         at_end = self.index == len(self.stega_text) - 1
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_transitions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_transitions); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -13174,14 +13241,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_self->current_gram};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 283, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_transitions = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":279
+  /* "thesis_toolkit.pyx":284
  *         """Choose the next token in the Markov chain."""
  *         transitions = self._get_transitions(self.current_gram)
  *         at_end = self.index == len(self.stega_text) - 1             # <<<<<<<<<<<<<<
@@ -13192,16 +13259,16 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   __Pyx_INCREF(__pyx_t_1);
   if (unlikely(__pyx_t_1 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 279, __pyx_L1_error)
+    __PYX_ERR(0, 284, __pyx_L1_error)
   }
-  __pyx_t_5 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyList_GET_SIZE(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyBool_FromLong((__pyx_v_self->index == (__pyx_t_5 - 1))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 279, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong((__pyx_v_self->index == (__pyx_t_5 - 1))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_at_end = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":281
+  /* "thesis_toolkit.pyx":286
  *         at_end = self.index == len(self.stega_text) - 1
  * 
  *         next_token = self.stega_text[self.index + 1] if self.index < len(self.stega_text) - 1 else ""             # <<<<<<<<<<<<<<
@@ -13212,18 +13279,18 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   __Pyx_INCREF(__pyx_t_2);
   if (unlikely(__pyx_t_2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 281, __pyx_L1_error)
+    __PYX_ERR(0, 286, __pyx_L1_error)
   }
-  __pyx_t_5 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 281, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 286, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = (__pyx_v_self->index < (__pyx_t_5 - 1));
   if (__pyx_t_6) {
     if (unlikely(__pyx_v_self->stega_text == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      __PYX_ERR(0, 281, __pyx_L1_error)
+      __PYX_ERR(0, 286, __pyx_L1_error)
     }
     __pyx_t_7 = (__pyx_v_self->index + 1);
-    __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_t_7, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_t_7, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -13234,28 +13301,28 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   __pyx_v_next_token = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":284
+  /* "thesis_toolkit.pyx":289
  * 
  *         # Get max possible bit length based on length of list
  *         list_length = len(transitions)             # <<<<<<<<<<<<<<
  *         bit_length = ceil(log2(list_length))
  *         if list_length < 2 ** bit_length:
  */
-  __pyx_t_5 = PyObject_Length(__pyx_v_transitions); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 284, __pyx_L1_error)
+  __pyx_t_5 = PyObject_Length(__pyx_v_transitions); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 289, __pyx_L1_error)
   __pyx_v_list_length = __pyx_t_5;
 
-  /* "thesis_toolkit.pyx":285
+  /* "thesis_toolkit.pyx":290
  *         # Get max possible bit length based on length of list
  *         list_length = len(transitions)
  *         bit_length = ceil(log2(list_length))             # <<<<<<<<<<<<<<
  *         if list_length < 2 ** bit_length:
  *             bit_length -= 1
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_ceil); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_ceil); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_log2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_log2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = PyInt_FromSsize_t(__pyx_v_list_length); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_9 = PyInt_FromSsize_t(__pyx_v_list_length); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 290, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __pyx_t_10 = NULL;
   __pyx_t_4 = 0;
@@ -13276,7 +13343,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __pyx_t_3 = __Pyx_PyObject_FastCall(__pyx_t_8, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 290, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
@@ -13299,44 +13366,44 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
   __pyx_v_bit_length = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":286
+  /* "thesis_toolkit.pyx":291
  *         list_length = len(transitions)
  *         bit_length = ceil(log2(list_length))
  *         if list_length < 2 ** bit_length:             # <<<<<<<<<<<<<<
  *             bit_length -= 1
  *             bit_length = 0 if list_length == 1 else bit_length
  */
-  __pyx_t_1 = PyInt_FromSsize_t(__pyx_v_list_length); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_1 = PyInt_FromSsize_t(__pyx_v_list_length); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyNumber_PowerOf2(__pyx_int_2, __pyx_v_bit_length, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyNumber_PowerOf2(__pyx_int_2, __pyx_v_bit_length, Py_None); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_t_1, __pyx_t_2, Py_LT); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 286, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 291, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_6) {
 
-    /* "thesis_toolkit.pyx":287
+    /* "thesis_toolkit.pyx":292
  *         bit_length = ceil(log2(list_length))
  *         if list_length < 2 ** bit_length:
  *             bit_length -= 1             # <<<<<<<<<<<<<<
  *             bit_length = 0 if list_length == 1 else bit_length
  * 
  */
-    __pyx_t_3 = __Pyx_PyInt_SubtractObjC(__pyx_v_bit_length, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 287, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_SubtractObjC(__pyx_v_bit_length, __pyx_int_1, 1, 1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 292, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF_SET(__pyx_v_bit_length, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "thesis_toolkit.pyx":288
+    /* "thesis_toolkit.pyx":293
  *         if list_length < 2 ** bit_length:
  *             bit_length -= 1
  *             bit_length = 0 if list_length == 1 else bit_length             # <<<<<<<<<<<<<<
@@ -13354,7 +13421,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __Pyx_DECREF_SET(__pyx_v_bit_length, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "thesis_toolkit.pyx":286
+    /* "thesis_toolkit.pyx":291
  *         list_length = len(transitions)
  *         bit_length = ceil(log2(list_length))
  *         if list_length < 2 ** bit_length:             # <<<<<<<<<<<<<<
@@ -13363,17 +13430,17 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  */
   }
 
-  /* "thesis_toolkit.pyx":290
+  /* "thesis_toolkit.pyx":295
  *             bit_length = 0 if list_length == 1 else bit_length
  * 
  *         if "___END__" in transitions:             # <<<<<<<<<<<<<<
  *             self.exhausted = True
  *             self.current_gram = None
  */
-  __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_END, __pyx_v_transitions, Py_EQ)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_6 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_END, __pyx_v_transitions, Py_EQ)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 295, __pyx_L1_error)
   if (__pyx_t_6) {
 
-    /* "thesis_toolkit.pyx":291
+    /* "thesis_toolkit.pyx":296
  * 
  *         if "___END__" in transitions:
  *             self.exhausted = True             # <<<<<<<<<<<<<<
@@ -13382,7 +13449,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  */
     __pyx_v_self->exhausted = 1;
 
-    /* "thesis_toolkit.pyx":292
+    /* "thesis_toolkit.pyx":297
  *         if "___END__" in transitions:
  *             self.exhausted = True
  *             self.current_gram = None             # <<<<<<<<<<<<<<
@@ -13395,7 +13462,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __Pyx_DECREF(__pyx_v_self->current_gram);
     __pyx_v_self->current_gram = Py_None;
 
-    /* "thesis_toolkit.pyx":293
+    /* "thesis_toolkit.pyx":298
  *             self.exhausted = True
  *             self.current_gram = None
  *             self.index += 1             # <<<<<<<<<<<<<<
@@ -13404,7 +13471,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  */
     __pyx_v_self->index = (__pyx_v_self->index + 1);
 
-    /* "thesis_toolkit.pyx":294
+    /* "thesis_toolkit.pyx":299
  *             self.current_gram = None
  *             self.index += 1
  *             return             # <<<<<<<<<<<<<<
@@ -13415,7 +13482,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "thesis_toolkit.pyx":290
+    /* "thesis_toolkit.pyx":295
  *             bit_length = 0 if list_length == 1 else bit_length
  * 
  *         if "___END__" in transitions:             # <<<<<<<<<<<<<<
@@ -13424,7 +13491,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  */
   }
 
-  /* "thesis_toolkit.pyx":296
+  /* "thesis_toolkit.pyx":301
  *             return
  *         else:
  *             next_token = "" if at_end else self.stega_text[self.index + 1]             # <<<<<<<<<<<<<<
@@ -13432,17 +13499,17 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  *         # Check for end key
  */
   /*else*/ {
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 296, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 301, __pyx_L1_error)
     if (__pyx_t_6) {
       __Pyx_INCREF(__pyx_kp_s__4);
       __pyx_t_3 = __pyx_kp_s__4;
     } else {
       if (unlikely(__pyx_v_self->stega_text == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 296, __pyx_L1_error)
+        __PYX_ERR(0, 301, __pyx_L1_error)
       }
       __pyx_t_7 = (__pyx_v_self->index + 1);
-      __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_t_7, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_t_7, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 301, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_3 = __pyx_t_2;
       __pyx_t_2 = 0;
@@ -13451,51 +13518,51 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __pyx_t_3 = 0;
   }
 
-  /* "thesis_toolkit.pyx":299
+  /* "thesis_toolkit.pyx":304
  * 
  *         # Check for end key
  *         if next_token not in transitions and not at_end:             # <<<<<<<<<<<<<<
  *             self.endkey = ord(next_token[-1]) - 97
  *             next_token = next_token[:-1]
  */
-  __pyx_t_11 = (__Pyx_PySequence_ContainsTF(__pyx_v_next_token, __pyx_v_transitions, Py_NE)); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_11 = (__Pyx_PySequence_ContainsTF(__pyx_v_next_token, __pyx_v_transitions, Py_NE)); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 304, __pyx_L1_error)
   if (__pyx_t_11) {
   } else {
     __pyx_t_6 = __pyx_t_11;
     goto __pyx_L6_bool_binop_done;
   }
-  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_11 < 0))) __PYX_ERR(0, 304, __pyx_L1_error)
   __pyx_t_12 = (!__pyx_t_11);
   __pyx_t_6 = __pyx_t_12;
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_6) {
 
-    /* "thesis_toolkit.pyx":300
+    /* "thesis_toolkit.pyx":305
  *         # Check for end key
  *         if next_token not in transitions and not at_end:
  *             self.endkey = ord(next_token[-1]) - 97             # <<<<<<<<<<<<<<
  *             next_token = next_token[:-1]
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 2 else bit_length
  */
-    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_next_token, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 300, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_GetItemInt(__pyx_v_next_token, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 305, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_PyObject_Ord(__pyx_t_3); if (unlikely(__pyx_t_7 == ((long)(long)(Py_UCS4)-1))) __PYX_ERR(0, 300, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Ord(__pyx_t_3); if (unlikely(__pyx_t_7 == ((long)(long)(Py_UCS4)-1))) __PYX_ERR(0, 305, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_v_self->endkey = (__pyx_t_7 - 97);
 
-    /* "thesis_toolkit.pyx":301
+    /* "thesis_toolkit.pyx":306
  *         if next_token not in transitions and not at_end:
  *             self.endkey = ord(next_token[-1]) - 97
  *             next_token = next_token[:-1]             # <<<<<<<<<<<<<<
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 2 else bit_length
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_next_token, 0, -1L, NULL, NULL, &__pyx_slice__7, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_v_next_token, 0, -1L, NULL, NULL, &__pyx_slice__7, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 306, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF_SET(__pyx_v_next_token, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "thesis_toolkit.pyx":299
+    /* "thesis_toolkit.pyx":304
  * 
  *         # Check for end key
  *         if next_token not in transitions and not at_end:             # <<<<<<<<<<<<<<
@@ -13504,7 +13571,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  */
   }
 
-  /* "thesis_toolkit.pyx":302
+  /* "thesis_toolkit.pyx":307
  *             self.endkey = ord(next_token[-1]) - 97
  *             next_token = next_token[:-1]
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 2 else bit_length             # <<<<<<<<<<<<<<
@@ -13515,13 +13582,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   __Pyx_INCREF(__pyx_t_2);
   if (unlikely(__pyx_t_2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 302, __pyx_L1_error)
+    __PYX_ERR(0, 307, __pyx_L1_error)
   }
-  __pyx_t_5 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = (__pyx_v_self->index == (__pyx_t_5 - 2));
   if (__pyx_t_6) {
-    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->endkey); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 302, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->endkey); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_3 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -13532,29 +13599,29 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   __Pyx_DECREF_SET(__pyx_v_bit_length, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "thesis_toolkit.pyx":304
+  /* "thesis_toolkit.pyx":309
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 2 else bit_length
  * 
  *         if bit_length != 0:             # <<<<<<<<<<<<<<
  *             embedded_index = "N/A" if at_end else transitions.index(next_token)
  *             bit_string = "" if at_end else bin(embedded_index)[2:].zfill(bit_length)
  */
-  __pyx_t_6 = (__Pyx_PyInt_BoolNeObjC(__pyx_v_bit_length, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 304, __pyx_L1_error)
+  __pyx_t_6 = (__Pyx_PyInt_BoolNeObjC(__pyx_v_bit_length, __pyx_int_0, 0, 0)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 309, __pyx_L1_error)
   if (__pyx_t_6) {
 
-    /* "thesis_toolkit.pyx":305
+    /* "thesis_toolkit.pyx":310
  * 
  *         if bit_length != 0:
  *             embedded_index = "N/A" if at_end else transitions.index(next_token)             # <<<<<<<<<<<<<<
  *             bit_string = "" if at_end else bin(embedded_index)[2:].zfill(bit_length)
  *         else:
  */
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 305, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 310, __pyx_L1_error)
     if (__pyx_t_6) {
       __Pyx_INCREF(__pyx_kp_s_N_A);
       __pyx_t_3 = __pyx_kp_s_N_A;
     } else {
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_transitions, __pyx_n_s_index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_transitions, __pyx_n_s_index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 310, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_8 = NULL;
       __pyx_t_4 = 0;
@@ -13574,7 +13641,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
         PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_next_token};
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
@@ -13584,24 +13651,24 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __pyx_v_embedded_index = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "thesis_toolkit.pyx":306
+    /* "thesis_toolkit.pyx":311
  *         if bit_length != 0:
  *             embedded_index = "N/A" if at_end else transitions.index(next_token)
  *             bit_string = "" if at_end else bin(embedded_index)[2:].zfill(bit_length)             # <<<<<<<<<<<<<<
  *         else:
  *             embedded_index = "N/A"
  */
-    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 306, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_at_end); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 311, __pyx_L1_error)
     if (__pyx_t_6) {
       __Pyx_INCREF(__pyx_kp_s__4);
       __pyx_t_3 = __pyx_kp_s__4;
     } else {
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_bin, __pyx_v_embedded_index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_bin, __pyx_v_embedded_index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_8 = __Pyx_PyObject_GetSlice(__pyx_t_1, 2, 0, NULL, NULL, &__pyx_slice__8, 1, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 306, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetSlice(__pyx_t_1, 2, 0, NULL, NULL, &__pyx_slice__8, 1, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 311, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_zfill); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 306, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_zfill); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __pyx_t_8 = NULL;
@@ -13622,7 +13689,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
         PyObject *__pyx_callargs[2] = {__pyx_t_8, __pyx_v_bit_length};
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_1, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 311, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
@@ -13632,7 +13699,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __pyx_v_bit_string = __pyx_t_3;
     __pyx_t_3 = 0;
 
-    /* "thesis_toolkit.pyx":304
+    /* "thesis_toolkit.pyx":309
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 2 else bit_length
  * 
  *         if bit_length != 0:             # <<<<<<<<<<<<<<
@@ -13642,7 +13709,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     goto __pyx_L8;
   }
 
-  /* "thesis_toolkit.pyx":308
+  /* "thesis_toolkit.pyx":313
  *             bit_string = "" if at_end else bin(embedded_index)[2:].zfill(bit_length)
  *         else:
  *             embedded_index = "N/A"             # <<<<<<<<<<<<<<
@@ -13653,7 +13720,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
     __Pyx_INCREF(__pyx_kp_s_N_A);
     __pyx_v_embedded_index = __pyx_kp_s_N_A;
 
-    /* "thesis_toolkit.pyx":309
+    /* "thesis_toolkit.pyx":314
  *         else:
  *             embedded_index = "N/A"
  *             bit_string = ""             # <<<<<<<<<<<<<<
@@ -13665,37 +13732,37 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   }
   __pyx_L8:;
 
-  /* "thesis_toolkit.pyx":312
+  /* "thesis_toolkit.pyx":317
  * 
  *         # Construct gram
  *         next_gram = list(self.current_gram)             # <<<<<<<<<<<<<<
  *         next_gram.append(next_token)
  *         self.current_gram = tuple(next_gram[1:])
  */
-  __pyx_t_3 = PySequence_List(__pyx_v_self->current_gram); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_3 = PySequence_List(__pyx_v_self->current_gram); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 317, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_next_gram = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "thesis_toolkit.pyx":313
+  /* "thesis_toolkit.pyx":318
  *         # Construct gram
  *         next_gram = list(self.current_gram)
  *         next_gram.append(next_token)             # <<<<<<<<<<<<<<
  *         self.current_gram = tuple(next_gram[1:])
  * 
  */
-  __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_next_gram, __pyx_v_next_token); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 313, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyList_Append(__pyx_v_next_gram, __pyx_v_next_token); if (unlikely(__pyx_t_13 == ((int)-1))) __PYX_ERR(0, 318, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":314
+  /* "thesis_toolkit.pyx":319
  *         next_gram = list(self.current_gram)
  *         next_gram.append(next_token)
  *         self.current_gram = tuple(next_gram[1:])             # <<<<<<<<<<<<<<
  * 
  *         # Add bit string to output
  */
-  __pyx_t_3 = __Pyx_PyList_GetSlice(__pyx_v_next_gram, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyList_GetSlice(__pyx_v_next_gram, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyList_AsTuple(((PyObject*)__pyx_t_3)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 314, __pyx_L1_error)
+  __pyx_t_2 = PyList_AsTuple(((PyObject*)__pyx_t_3)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_GIVEREF(__pyx_t_2);
@@ -13704,23 +13771,23 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   __pyx_v_self->current_gram = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "thesis_toolkit.pyx":317
+  /* "thesis_toolkit.pyx":322
  * 
  *         # Add bit string to output
  *         self.output += bit_string             # <<<<<<<<<<<<<<
  * 
  *         self.index += 1
  */
-  __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_self->output, __pyx_v_bit_string); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 317, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_self->output, __pyx_v_bit_string); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 317, __pyx_L1_error)
+  if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 322, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_2);
   __Pyx_GOTREF(__pyx_v_self->output);
   __Pyx_DECREF(__pyx_v_self->output);
   __pyx_v_self->output = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "thesis_toolkit.pyx":319
+  /* "thesis_toolkit.pyx":324
  *         self.output += bit_string
  * 
  *         self.index += 1             # <<<<<<<<<<<<<<
@@ -13729,7 +13796,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
  */
   __pyx_v_self->index = (__pyx_v_self->index + 1);
 
-  /* "thesis_toolkit.pyx":276
+  /* "thesis_toolkit.pyx":281
  *         self.output += bit_string
  * 
  *     def _choose_next_token(self):             # <<<<<<<<<<<<<<
@@ -13762,7 +13829,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_8_choose_next_token
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":322
+/* "thesis_toolkit.pyx":327
  * 
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
@@ -13825,7 +13892,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_10solve(struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("solve", 1);
 
-  /* "thesis_toolkit.pyx":324
+  /* "thesis_toolkit.pyx":329
  *     def solve(self):
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:             # <<<<<<<<<<<<<<
@@ -13836,14 +13903,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_10solve(struct __py
     __pyx_t_1 = (!__pyx_v_self->finished);
     if (!__pyx_t_1) break;
 
-    /* "thesis_toolkit.pyx":325
+    /* "thesis_toolkit.pyx":330
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:
  *             self.step()             # <<<<<<<<<<<<<<
  * 
  *         return self.output
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 325, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -13863,14 +13930,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_10solve(struct __py
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 325, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 330, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
 
-  /* "thesis_toolkit.pyx":327
+  /* "thesis_toolkit.pyx":332
  *             self.step()
  * 
  *         return self.output             # <<<<<<<<<<<<<<
@@ -13882,7 +13949,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_10solve(struct __py
   __pyx_r = __pyx_v_self->output;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":322
+  /* "thesis_toolkit.pyx":327
  * 
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
@@ -13903,7 +13970,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_10solve(struct __py
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":329
+/* "thesis_toolkit.pyx":334
  *         return self.output
  * 
  *     def _get_transitions(self, gram):             # <<<<<<<<<<<<<<
@@ -13965,12 +14032,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 329, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 334, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_get_transitions") < 0)) __PYX_ERR(0, 329, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "_get_transitions") < 0)) __PYX_ERR(0, 334, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -13981,7 +14048,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("_get_transitions", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 329, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("_get_transitions", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 334, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14008,7 +14075,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":332
+/* "thesis_toolkit.pyx":337
  *         """Get possible transitions for the current gram in the Markov chain."""
  *         trans_matrix = self.model.chain.model[gram]
  *         trans_matrix = sorted(trans_matrix.items(), key=lambda kv: (kv[1]), reverse=True)             # <<<<<<<<<<<<<<
@@ -14069,12 +14136,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 332, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 337, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda2") < 0)) __PYX_ERR(0, 332, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda2") < 0)) __PYX_ERR(0, 337, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -14085,7 +14152,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 332, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda2", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 337, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14121,7 +14188,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda2", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_kv, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_kv, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -14138,7 +14205,7 @@ static PyObject *__pyx_lambda_funcdef_lambda2(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":329
+/* "thesis_toolkit.pyx":334
  *         return self.output
  * 
  *     def _get_transitions(self, gram):             # <<<<<<<<<<<<<<
@@ -14163,32 +14230,32 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("_get_transitions", 1);
 
-  /* "thesis_toolkit.pyx":331
+  /* "thesis_toolkit.pyx":336
  *     def _get_transitions(self, gram):
  *         """Get possible transitions for the current gram in the Markov chain."""
  *         trans_matrix = self.model.chain.model[gram]             # <<<<<<<<<<<<<<
  *         trans_matrix = sorted(trans_matrix.items(), key=lambda kv: (kv[1]), reverse=True)
  *         transitions = [i[0] for i in trans_matrix]
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_model); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_model); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_gram); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 331, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_gram); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_trans_matrix = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":332
+  /* "thesis_toolkit.pyx":337
  *         """Get possible transitions for the current gram in the Markov chain."""
  *         trans_matrix = self.model.chain.model[gram]
  *         trans_matrix = sorted(trans_matrix.items(), key=lambda kv: (kv[1]), reverse=True)             # <<<<<<<<<<<<<<
  *         transitions = [i[0] for i in trans_matrix]
  *         return transitions
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_trans_matrix, __pyx_n_s_items); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_trans_matrix, __pyx_n_s_items); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -14208,30 +14275,30 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_16_get_transitions_lambda2, 0, __pyx_n_s_get_transitions_locals_lambda, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_16_get_transitions_lambda2, 0, __pyx_n_s_get_transitions_locals_lambda, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_key, __pyx_t_3) < 0) __PYX_ERR(0, 332, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_key, __pyx_t_3) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 332, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_sorted, __pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_reverse, Py_True) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_sorted, __pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 337, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF_SET(__pyx_v_trans_matrix, __pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "thesis_toolkit.pyx":333
+  /* "thesis_toolkit.pyx":338
  *         trans_matrix = self.model.chain.model[gram]
  *         trans_matrix = sorted(trans_matrix.items(), key=lambda kv: (kv[1]), reverse=True)
  *         transitions = [i[0] for i in trans_matrix]             # <<<<<<<<<<<<<<
@@ -14239,16 +14306,16 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
  * 
  */
   { /* enter inner scope */
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 333, __pyx_L5_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 338, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_3);
     if (likely(PyList_CheckExact(__pyx_v_trans_matrix)) || PyTuple_CheckExact(__pyx_v_trans_matrix)) {
       __pyx_t_1 = __pyx_v_trans_matrix; __Pyx_INCREF(__pyx_t_1);
       __pyx_t_5 = 0;
       __pyx_t_6 = NULL;
     } else {
-      __pyx_t_5 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_trans_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 333, __pyx_L5_error)
+      __pyx_t_5 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_trans_matrix); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 338, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 333, __pyx_L5_error)
+      __pyx_t_6 = __Pyx_PyObject_GetIterNextFunc(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 338, __pyx_L5_error)
     }
     for (;;) {
       if (likely(!__pyx_t_6)) {
@@ -14256,28 +14323,28 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
           {
             Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_MACROS
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 333, __pyx_L5_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 338, __pyx_L5_error)
             #endif
             if (__pyx_t_5 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely((0 < 0))) __PYX_ERR(0, 333, __pyx_L5_error)
+          __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely((0 < 0))) __PYX_ERR(0, 338, __pyx_L5_error)
           #else
-          __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L5_error)
+          __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 338, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         } else {
           {
             Py_ssize_t __pyx_temp = __Pyx_PyTuple_GET_SIZE(__pyx_t_1);
             #if !CYTHON_ASSUME_SAFE_MACROS
-            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 333, __pyx_L5_error)
+            if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 338, __pyx_L5_error)
             #endif
             if (__pyx_t_5 >= __pyx_temp) break;
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely((0 < 0))) __PYX_ERR(0, 333, __pyx_L5_error)
+          __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_5); __Pyx_INCREF(__pyx_t_2); __pyx_t_5++; if (unlikely((0 < 0))) __PYX_ERR(0, 338, __pyx_L5_error)
           #else
-          __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L5_error)
+          __pyx_t_2 = __Pyx_PySequence_ITEM(__pyx_t_1, __pyx_t_5); __pyx_t_5++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 338, __pyx_L5_error)
           __Pyx_GOTREF(__pyx_t_2);
           #endif
         }
@@ -14287,7 +14354,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 333, __pyx_L5_error)
+            else __PYX_ERR(0, 338, __pyx_L5_error)
           }
           break;
         }
@@ -14295,9 +14362,9 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
       }
       __Pyx_XDECREF_SET(__pyx_8genexpr7__pyx_v_i, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_8genexpr7__pyx_v_i, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 333, __pyx_L5_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_8genexpr7__pyx_v_i, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 338, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 333, __pyx_L5_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 338, __pyx_L5_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -14311,7 +14378,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
   __pyx_v_transitions = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "thesis_toolkit.pyx":334
+  /* "thesis_toolkit.pyx":339
  *         trans_matrix = sorted(trans_matrix.items(), key=lambda kv: (kv[1]), reverse=True)
  *         transitions = [i[0] for i in trans_matrix]
  *         return transitions             # <<<<<<<<<<<<<<
@@ -14323,7 +14390,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_12_get_transitions(
   __pyx_r = __pyx_v_transitions;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":329
+  /* "thesis_toolkit.pyx":334
  *         return self.output
  * 
  *     def _get_transitions(self, gram):             # <<<<<<<<<<<<<<
@@ -14811,7 +14878,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15EnhancedDecoder_16__setstate_cython
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":351
+/* "thesis_toolkit.pyx":356
  *     cdef int c
  * 
  *     def __init__(self, model, str bitstream):             # <<<<<<<<<<<<<<
@@ -14858,7 +14925,7 @@ static int __pyx_pw_14thesis_toolkit_15ExistingEncoder_1__init__(PyObject *__pyx
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 351, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 356, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -14866,14 +14933,14 @@ static int __pyx_pw_14thesis_toolkit_15ExistingEncoder_1__init__(PyObject *__pyx
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 351, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 356, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 351, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 356, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 351, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 356, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -14886,7 +14953,7 @@ static int __pyx_pw_14thesis_toolkit_15ExistingEncoder_1__init__(PyObject *__pyx
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 351, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 356, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -14900,7 +14967,7 @@ static int __pyx_pw_14thesis_toolkit_15ExistingEncoder_1__init__(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_bitstream), (&PyString_Type), 1, "bitstream", 1))) __PYX_ERR(0, 351, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_bitstream), (&PyString_Type), 1, "bitstream", 1))) __PYX_ERR(0, 356, __pyx_L1_error)
   __pyx_r = __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(((struct __pyx_obj_14thesis_toolkit_ExistingEncoder *)__pyx_v_self), __pyx_v_model, __pyx_v_bitstream);
 
   /* function exit code */
@@ -14936,7 +15003,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "thesis_toolkit.pyx":352
+  /* "thesis_toolkit.pyx":357
  * 
  *     def __init__(self, model, str bitstream):
  *         self.model = model             # <<<<<<<<<<<<<<
@@ -14949,7 +15016,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->model);
   __pyx_v_self->model = __pyx_v_model;
 
-  /* "thesis_toolkit.pyx":353
+  /* "thesis_toolkit.pyx":358
  *     def __init__(self, model, str bitstream):
  *         self.model = model
  *         self.bitstream = bitstream             # <<<<<<<<<<<<<<
@@ -14962,17 +15029,17 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->bitstream);
   __pyx_v_self->bitstream = __pyx_v_bitstream;
 
-  /* "thesis_toolkit.pyx":354
+  /* "thesis_toolkit.pyx":359
  *         self.model = model
  *         self.bitstream = bitstream
  *         self.bitstream_length = len(bitstream)             # <<<<<<<<<<<<<<
  *         self.entrypoints = [key for key in model.chain.model.keys() if "___BEGIN__" in key][1:]
  *         self.current_gram = None
  */
-  __pyx_t_1 = PyObject_Length(__pyx_v_bitstream); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 354, __pyx_L1_error)
+  __pyx_t_1 = PyObject_Length(__pyx_v_bitstream); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 359, __pyx_L1_error)
   __pyx_v_self->bitstream_length = __pyx_t_1;
 
-  /* "thesis_toolkit.pyx":355
+  /* "thesis_toolkit.pyx":360
  *         self.bitstream = bitstream
  *         self.bitstream_length = len(bitstream)
  *         self.entrypoints = [key for key in model.chain.model.keys() if "___BEGIN__" in key][1:]             # <<<<<<<<<<<<<<
@@ -14980,19 +15047,19 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
  *         self.output_tokens = []
  */
   { /* enter inner scope */
-    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 355, __pyx_L5_error)
+    __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 360, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_model, __pyx_n_s_chain); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L5_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_model, __pyx_n_s_chain); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 360, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_model); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 355, __pyx_L5_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_model); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 360, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (unlikely(__pyx_t_7 == Py_None)) {
       PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "keys");
-      __PYX_ERR(0, 355, __pyx_L5_error)
+      __PYX_ERR(0, 360, __pyx_L5_error)
     }
-    __pyx_t_6 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_4), (&__pyx_t_5)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 355, __pyx_L5_error)
+    __pyx_t_6 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_4), (&__pyx_t_5)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 360, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_3);
@@ -15001,13 +15068,13 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
     while (1) {
       __pyx_t_8 = __Pyx_dict_iter_next(__pyx_t_3, __pyx_t_4, &__pyx_t_1, &__pyx_t_6, NULL, NULL, __pyx_t_5);
       if (unlikely(__pyx_t_8 == 0)) break;
-      if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 355, __pyx_L5_error)
+      if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 360, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_XDECREF_SET(__pyx_8genexpr8__pyx_v_key, __pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_BEGIN, __pyx_8genexpr8__pyx_v_key, Py_EQ)); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 355, __pyx_L5_error)
+      __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_BEGIN, __pyx_8genexpr8__pyx_v_key, Py_EQ)); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 360, __pyx_L5_error)
       if (__pyx_t_9) {
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_8genexpr8__pyx_v_key))) __PYX_ERR(0, 355, __pyx_L5_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_8genexpr8__pyx_v_key))) __PYX_ERR(0, 360, __pyx_L5_error)
       }
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -15018,7 +15085,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
     goto __pyx_L1_error;
     __pyx_L9_exit_scope:;
   } /* exit inner scope */
-  __pyx_t_3 = __Pyx_PyList_GetSlice(__pyx_t_2, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 355, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyList_GetSlice(__pyx_t_2, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_GIVEREF(__pyx_t_3);
@@ -15027,7 +15094,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   __pyx_v_self->entrypoints = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "thesis_toolkit.pyx":356
+  /* "thesis_toolkit.pyx":361
  *         self.bitstream_length = len(bitstream)
  *         self.entrypoints = [key for key in model.chain.model.keys() if "___BEGIN__" in key][1:]
  *         self.current_gram = None             # <<<<<<<<<<<<<<
@@ -15040,14 +15107,14 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->current_gram);
   __pyx_v_self->current_gram = ((PyObject*)Py_None);
 
-  /* "thesis_toolkit.pyx":357
+  /* "thesis_toolkit.pyx":362
  *         self.entrypoints = [key for key in model.chain.model.keys() if "___BEGIN__" in key][1:]
  *         self.current_gram = None
  *         self.output_tokens = []             # <<<<<<<<<<<<<<
  *         self.exhausted = True
  *         self.finished = False
  */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 357, __pyx_L1_error)
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 362, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_3);
   __Pyx_GOTREF(__pyx_v_self->output_tokens);
@@ -15055,7 +15122,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   __pyx_v_self->output_tokens = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "thesis_toolkit.pyx":358
+  /* "thesis_toolkit.pyx":363
  *         self.current_gram = None
  *         self.output_tokens = []
  *         self.exhausted = True             # <<<<<<<<<<<<<<
@@ -15064,7 +15131,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
  */
   __pyx_v_self->exhausted = 1;
 
-  /* "thesis_toolkit.pyx":359
+  /* "thesis_toolkit.pyx":364
  *         self.output_tokens = []
  *         self.exhausted = True
  *         self.finished = False             # <<<<<<<<<<<<<<
@@ -15073,7 +15140,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
  */
   __pyx_v_self->finished = 0;
 
-  /* "thesis_toolkit.pyx":360
+  /* "thesis_toolkit.pyx":365
  *         self.exhausted = True
  *         self.finished = False
  *         self.c = 1             # <<<<<<<<<<<<<<
@@ -15082,7 +15149,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
  */
   __pyx_v_self->c = 1;
 
-  /* "thesis_toolkit.pyx":351
+  /* "thesis_toolkit.pyx":356
  *     cdef int c
  * 
  *     def __init__(self, model, str bitstream):             # <<<<<<<<<<<<<<
@@ -15106,7 +15173,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingEncoder___init__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":362
+/* "thesis_toolkit.pyx":367
  *         self.c = 1
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -15139,7 +15206,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6output___get__(str
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "thesis_toolkit.pyx":365
+  /* "thesis_toolkit.pyx":370
  *     def output(self):
  *         """Returns the current state of the output string."""
  *         return " ".join(self.output_tokens)             # <<<<<<<<<<<<<<
@@ -15149,14 +15216,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6output___get__(str
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __pyx_v_self->output_tokens;
   __Pyx_INCREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__6, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyString_Join(__pyx_kp_s__6, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":362
+  /* "thesis_toolkit.pyx":367
  *         self.c = 1
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -15176,7 +15243,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6output___get__(str
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":367
+/* "thesis_toolkit.pyx":372
  *         return " ".join(self.output_tokens)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -15208,7 +15275,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_8finished___get__(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "thesis_toolkit.pyx":369
+  /* "thesis_toolkit.pyx":374
  *     @property
  *     def finished(self):
  *         return self.finished             # <<<<<<<<<<<<<<
@@ -15216,13 +15283,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_8finished___get__(s
  *     def step(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->finished); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->finished); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":367
+  /* "thesis_toolkit.pyx":372
  *         return " ".join(self.output_tokens)
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -15241,7 +15308,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_8finished___get__(s
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":371
+/* "thesis_toolkit.pyx":376
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -15330,7 +15397,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("step", 1);
 
-  /* "thesis_toolkit.pyx":377
+  /* "thesis_toolkit.pyx":382
  *             float: The progress of the encoding process.
  *         """
  *         if self.finished:             # <<<<<<<<<<<<<<
@@ -15339,7 +15406,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
   if (__pyx_v_self->finished) {
 
-    /* "thesis_toolkit.pyx":378
+    /* "thesis_toolkit.pyx":383
  *         """
  *         if self.finished:
  *             return             # <<<<<<<<<<<<<<
@@ -15350,7 +15417,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "thesis_toolkit.pyx":377
+    /* "thesis_toolkit.pyx":382
  *             float: The progress of the encoding process.
  *         """
  *         if self.finished:             # <<<<<<<<<<<<<<
@@ -15359,7 +15426,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
   }
 
-  /* "thesis_toolkit.pyx":380
+  /* "thesis_toolkit.pyx":385
  *             return
  * 
  *         cdef int char_limit = 20             # <<<<<<<<<<<<<<
@@ -15368,7 +15435,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
   __pyx_v_char_limit = 20;
 
-  /* "thesis_toolkit.pyx":381
+  /* "thesis_toolkit.pyx":386
  * 
  *         cdef int char_limit = 20
  *         cdef int matrix_limit = 10             # <<<<<<<<<<<<<<
@@ -15377,7 +15444,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
   __pyx_v_matrix_limit = 10;
 
-  /* "thesis_toolkit.pyx":388
+  /* "thesis_toolkit.pyx":393
  *         cdef list next_gram
  * 
  *         if self.exhausted:             # <<<<<<<<<<<<<<
@@ -15386,7 +15453,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
   if (__pyx_v_self->exhausted) {
 
-    /* "thesis_toolkit.pyx":389
+    /* "thesis_toolkit.pyx":394
  * 
  *         if self.exhausted:
  *             self.exhausted = False             # <<<<<<<<<<<<<<
@@ -15395,16 +15462,16 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
     __pyx_v_self->exhausted = 0;
 
-    /* "thesis_toolkit.pyx":390
+    /* "thesis_toolkit.pyx":395
  *         if self.exhausted:
  *             self.exhausted = False
  *             self.current_gram = random.choice(self.entrypoints)             # <<<<<<<<<<<<<<
  *             self.output_tokens.append(self.current_gram[1])
  *         else:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_random); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_random); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_choice); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 390, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_choice); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -15425,18 +15492,18 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_self->entrypoints};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    if (!(likely(PyTuple_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_t_1))) __PYX_ERR(0, 390, __pyx_L1_error)
+    if (!(likely(PyTuple_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_t_1))) __PYX_ERR(0, 395, __pyx_L1_error)
     __Pyx_GIVEREF(__pyx_t_1);
     __Pyx_GOTREF(__pyx_v_self->current_gram);
     __Pyx_DECREF(__pyx_v_self->current_gram);
     __pyx_v_self->current_gram = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "thesis_toolkit.pyx":391
+    /* "thesis_toolkit.pyx":396
  *             self.exhausted = False
  *             self.current_gram = random.choice(self.entrypoints)
  *             self.output_tokens.append(self.current_gram[1])             # <<<<<<<<<<<<<<
@@ -15445,18 +15512,18 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
     if (unlikely(__pyx_v_self->output_tokens == Py_None)) {
       PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "append");
-      __PYX_ERR(0, 391, __pyx_L1_error)
+      __PYX_ERR(0, 396, __pyx_L1_error)
     }
     if (unlikely(__pyx_v_self->current_gram == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      __PYX_ERR(0, 391, __pyx_L1_error)
+      __PYX_ERR(0, 396, __pyx_L1_error)
     }
-    __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v_self->current_gram, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 391, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v_self->current_gram, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 396, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_self->output_tokens, __pyx_t_1); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 391, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_self->output_tokens, __pyx_t_1); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 396, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "thesis_toolkit.pyx":388
+    /* "thesis_toolkit.pyx":393
  *         cdef list next_gram
  * 
  *         if self.exhausted:             # <<<<<<<<<<<<<<
@@ -15466,7 +15533,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
     goto __pyx_L4;
   }
 
-  /* "thesis_toolkit.pyx":393
+  /* "thesis_toolkit.pyx":398
  *             self.output_tokens.append(self.current_gram[1])
  *         else:
  *             trans_matrix = self.get_transition_matrix(self.current_gram)             # <<<<<<<<<<<<<<
@@ -15474,7 +15541,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  *                 self.c += 1
  */
   /*else*/ {
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_transition_matrix); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 393, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_transition_matrix); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_2 = NULL;
     __pyx_t_4 = 0;
@@ -15494,15 +15561,15 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_v_self->current_gram};
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 393, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
-    if (!(likely(PyDict_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_1))) __PYX_ERR(0, 393, __pyx_L1_error)
+    if (!(likely(PyDict_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_1))) __PYX_ERR(0, 398, __pyx_L1_error)
     __pyx_v_trans_matrix = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "thesis_toolkit.pyx":394
+    /* "thesis_toolkit.pyx":399
  *         else:
  *             trans_matrix = self.get_transition_matrix(self.current_gram)
  *             if len(trans_matrix) > 1:             # <<<<<<<<<<<<<<
@@ -15511,13 +15578,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
     if (unlikely(__pyx_v_trans_matrix == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-      __PYX_ERR(0, 394, __pyx_L1_error)
+      __PYX_ERR(0, 399, __pyx_L1_error)
     }
-    __pyx_t_6 = PyDict_Size(__pyx_v_trans_matrix); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 394, __pyx_L1_error)
+    __pyx_t_6 = PyDict_Size(__pyx_v_trans_matrix); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 399, __pyx_L1_error)
     __pyx_t_7 = (__pyx_t_6 > 1);
     if (__pyx_t_7) {
 
-      /* "thesis_toolkit.pyx":395
+      /* "thesis_toolkit.pyx":400
  *             trans_matrix = self.get_transition_matrix(self.current_gram)
  *             if len(trans_matrix) > 1:
  *                 self.c += 1             # <<<<<<<<<<<<<<
@@ -15526,27 +15593,27 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
       __pyx_v_self->c = (__pyx_v_self->c + 1);
 
-      /* "thesis_toolkit.pyx":396
+      /* "thesis_toolkit.pyx":401
  *             if len(trans_matrix) > 1:
  *                 self.c += 1
  *                 huffman_code = huffman.codebook([(k, v) for k, v in trans_matrix.items()])             # <<<<<<<<<<<<<<
  *                 huffman_code = {v: k for k, v in huffman_code.items()}
  *                 tree_depth = max([len(n) for n in huffman_code.keys()])
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_huffman); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_huffman); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_codebook); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 396, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_codebook); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       { /* enter inner scope */
-        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 396, __pyx_L8_error)
+        __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L8_error)
         __Pyx_GOTREF(__pyx_t_3);
         __pyx_t_6 = 0;
         if (unlikely(__pyx_v_trans_matrix == Py_None)) {
           PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-          __PYX_ERR(0, 396, __pyx_L8_error)
+          __PYX_ERR(0, 401, __pyx_L8_error)
         }
-        __pyx_t_11 = __Pyx_dict_iterator(__pyx_v_trans_matrix, 1, __pyx_n_s_items, (&__pyx_t_9), (&__pyx_t_10)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 396, __pyx_L8_error)
+        __pyx_t_11 = __Pyx_dict_iterator(__pyx_v_trans_matrix, 1, __pyx_n_s_items, (&__pyx_t_9), (&__pyx_t_10)); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 401, __pyx_L8_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_XDECREF(__pyx_t_8);
         __pyx_t_8 = __pyx_t_11;
@@ -15554,22 +15621,22 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
         while (1) {
           __pyx_t_13 = __Pyx_dict_iter_next(__pyx_t_8, __pyx_t_9, &__pyx_t_6, &__pyx_t_11, &__pyx_t_12, NULL, __pyx_t_10);
           if (unlikely(__pyx_t_13 == 0)) break;
-          if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 396, __pyx_L8_error)
+          if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 401, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_11);
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_XDECREF_SET(__pyx_8genexpr9__pyx_v_k, __pyx_t_11);
           __pyx_t_11 = 0;
           __Pyx_XDECREF_SET(__pyx_8genexpr9__pyx_v_v, __pyx_t_12);
           __pyx_t_12 = 0;
-          __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 396, __pyx_L8_error)
+          __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 401, __pyx_L8_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_INCREF(__pyx_8genexpr9__pyx_v_k);
           __Pyx_GIVEREF(__pyx_8genexpr9__pyx_v_k);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_8genexpr9__pyx_v_k)) __PYX_ERR(0, 396, __pyx_L8_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_8genexpr9__pyx_v_k)) __PYX_ERR(0, 401, __pyx_L8_error);
           __Pyx_INCREF(__pyx_8genexpr9__pyx_v_v);
           __Pyx_GIVEREF(__pyx_8genexpr9__pyx_v_v);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_8genexpr9__pyx_v_v)) __PYX_ERR(0, 396, __pyx_L8_error);
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 396, __pyx_L8_error)
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_8genexpr9__pyx_v_v)) __PYX_ERR(0, 401, __pyx_L8_error);
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 401, __pyx_L8_error)
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         }
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -15601,15 +15668,15 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 1+__pyx_t_4);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 396, __pyx_L1_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 401, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
-      if (!(likely(PyDict_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_1))) __PYX_ERR(0, 396, __pyx_L1_error)
+      if (!(likely(PyDict_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_1))) __PYX_ERR(0, 401, __pyx_L1_error)
       __pyx_v_huffman_code = ((PyObject*)__pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "thesis_toolkit.pyx":397
+      /* "thesis_toolkit.pyx":402
  *                 self.c += 1
  *                 huffman_code = huffman.codebook([(k, v) for k, v in trans_matrix.items()])
  *                 huffman_code = {v: k for k, v in huffman_code.items()}             # <<<<<<<<<<<<<<
@@ -15617,14 +15684,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  * 
  */
       { /* enter inner scope */
-        __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 397, __pyx_L14_error)
+        __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_9 = 0;
         if (unlikely(__pyx_v_huffman_code == Py_None)) {
           PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-          __PYX_ERR(0, 397, __pyx_L14_error)
+          __PYX_ERR(0, 402, __pyx_L14_error)
         }
-        __pyx_t_3 = __Pyx_dict_iterator(__pyx_v_huffman_code, 1, __pyx_n_s_items, (&__pyx_t_6), (&__pyx_t_10)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L14_error)
+        __pyx_t_3 = __Pyx_dict_iterator(__pyx_v_huffman_code, 1, __pyx_n_s_items, (&__pyx_t_6), (&__pyx_t_10)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L14_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_XDECREF(__pyx_t_2);
         __pyx_t_2 = __pyx_t_3;
@@ -15632,14 +15699,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
         while (1) {
           __pyx_t_13 = __Pyx_dict_iter_next(__pyx_t_2, __pyx_t_6, &__pyx_t_9, &__pyx_t_3, &__pyx_t_8, NULL, __pyx_t_10);
           if (unlikely(__pyx_t_13 == 0)) break;
-          if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 397, __pyx_L14_error)
+          if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 402, __pyx_L14_error)
           __Pyx_GOTREF(__pyx_t_3);
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_XDECREF_SET(__pyx_9genexpr10__pyx_v_k, __pyx_t_3);
           __pyx_t_3 = 0;
           __Pyx_XDECREF_SET(__pyx_9genexpr10__pyx_v_v, __pyx_t_8);
           __pyx_t_8 = 0;
-          if (unlikely(PyDict_SetItem(__pyx_t_1, (PyObject*)__pyx_9genexpr10__pyx_v_v, (PyObject*)__pyx_9genexpr10__pyx_v_k))) __PYX_ERR(0, 397, __pyx_L14_error)
+          if (unlikely(PyDict_SetItem(__pyx_t_1, (PyObject*)__pyx_9genexpr10__pyx_v_v, (PyObject*)__pyx_9genexpr10__pyx_v_k))) __PYX_ERR(0, 402, __pyx_L14_error)
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_XDECREF(__pyx_9genexpr10__pyx_v_k); __pyx_9genexpr10__pyx_v_k = 0;
@@ -15654,7 +15721,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       __Pyx_DECREF_SET(__pyx_v_huffman_code, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "thesis_toolkit.pyx":398
+      /* "thesis_toolkit.pyx":403
  *                 huffman_code = huffman.codebook([(k, v) for k, v in trans_matrix.items()])
  *                 huffman_code = {v: k for k, v in huffman_code.items()}
  *                 tree_depth = max([len(n) for n in huffman_code.keys()])             # <<<<<<<<<<<<<<
@@ -15662,10 +15729,10 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  *                 count = 0
  */
       { /* enter inner scope */
-        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L20_error)
+        __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L20_error)
         __Pyx_GOTREF(__pyx_t_1);
         __pyx_t_6 = 0;
-        __pyx_t_8 = __Pyx_dict_iterator(__pyx_v_huffman_code, 1, __pyx_n_s_keys, (&__pyx_t_9), (&__pyx_t_10)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 398, __pyx_L20_error)
+        __pyx_t_8 = __Pyx_dict_iterator(__pyx_v_huffman_code, 1, __pyx_n_s_keys, (&__pyx_t_9), (&__pyx_t_10)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 403, __pyx_L20_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_XDECREF(__pyx_t_2);
         __pyx_t_2 = __pyx_t_8;
@@ -15673,14 +15740,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
         while (1) {
           __pyx_t_13 = __Pyx_dict_iter_next(__pyx_t_2, __pyx_t_9, &__pyx_t_6, &__pyx_t_8, NULL, NULL, __pyx_t_10);
           if (unlikely(__pyx_t_13 == 0)) break;
-          if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 398, __pyx_L20_error)
+          if (unlikely(__pyx_t_13 == -1)) __PYX_ERR(0, 403, __pyx_L20_error)
           __Pyx_GOTREF(__pyx_t_8);
           __Pyx_XDECREF_SET(__pyx_9genexpr11__pyx_v_n, __pyx_t_8);
           __pyx_t_8 = 0;
-          __pyx_t_14 = PyObject_Length(__pyx_9genexpr11__pyx_v_n); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 398, __pyx_L20_error)
-          __pyx_t_8 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 398, __pyx_L20_error)
+          __pyx_t_14 = PyObject_Length(__pyx_9genexpr11__pyx_v_n); if (unlikely(__pyx_t_14 == ((Py_ssize_t)-1))) __PYX_ERR(0, 403, __pyx_L20_error)
+          __pyx_t_8 = PyInt_FromSsize_t(__pyx_t_14); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 403, __pyx_L20_error)
           __Pyx_GOTREF(__pyx_t_8);
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 398, __pyx_L20_error)
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 403, __pyx_L20_error)
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15691,14 +15758,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
         goto __pyx_L1_error;
         __pyx_L23_exit_scope:;
       } /* exit inner scope */
-      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 403, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_10 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 398, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_As_int(__pyx_t_2); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 403, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_v_tree_depth = __pyx_t_10;
 
-      /* "thesis_toolkit.pyx":400
+      /* "thesis_toolkit.pyx":405
  *                 tree_depth = max([len(n) for n in huffman_code.keys()])
  * 
  *                 count = 0             # <<<<<<<<<<<<<<
@@ -15707,7 +15774,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
       __pyx_v_count = 0;
 
-      /* "thesis_toolkit.pyx":401
+      /* "thesis_toolkit.pyx":406
  * 
  *                 count = 0
  *                 for i in range(tree_depth, 0, -1):             # <<<<<<<<<<<<<<
@@ -15717,7 +15784,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       for (__pyx_t_10 = __pyx_v_tree_depth; __pyx_t_10 > 0; __pyx_t_10-=1) {
         __pyx_v_i = __pyx_t_10;
 
-        /* "thesis_toolkit.pyx":402
+        /* "thesis_toolkit.pyx":407
  *                 count = 0
  *                 for i in range(tree_depth, 0, -1):
  *                     if i >= len(self.bitstream):             # <<<<<<<<<<<<<<
@@ -15726,12 +15793,12 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
         __pyx_t_2 = __pyx_v_self->bitstream;
         __Pyx_INCREF(__pyx_t_2);
-        __pyx_t_9 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 402, __pyx_L1_error)
+        __pyx_t_9 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 407, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_7 = (__pyx_v_i >= __pyx_t_9);
         if (__pyx_t_7) {
 
-          /* "thesis_toolkit.pyx":403
+          /* "thesis_toolkit.pyx":408
  *                 for i in range(tree_depth, 0, -1):
  *                     if i >= len(self.bitstream):
  *                         continue             # <<<<<<<<<<<<<<
@@ -15740,7 +15807,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
           goto __pyx_L24_continue;
 
-          /* "thesis_toolkit.pyx":402
+          /* "thesis_toolkit.pyx":407
  *                 count = 0
  *                 for i in range(tree_depth, 0, -1):
  *                     if i >= len(self.bitstream):             # <<<<<<<<<<<<<<
@@ -15749,7 +15816,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
         }
 
-        /* "thesis_toolkit.pyx":404
+        /* "thesis_toolkit.pyx":409
  *                     if i >= len(self.bitstream):
  *                         continue
  *                     bits = self.bitstream[:i]             # <<<<<<<<<<<<<<
@@ -15758,37 +15825,37 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
         if (unlikely(__pyx_v_self->bitstream == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 404, __pyx_L1_error)
+          __PYX_ERR(0, 409, __pyx_L1_error)
         }
-        __pyx_t_2 = PySequence_GetSlice(__pyx_v_self->bitstream, 0, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
+        __pyx_t_2 = PySequence_GetSlice(__pyx_v_self->bitstream, 0, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_XDECREF_SET(__pyx_v_bits, ((PyObject*)__pyx_t_2));
         __pyx_t_2 = 0;
 
-        /* "thesis_toolkit.pyx":405
+        /* "thesis_toolkit.pyx":410
  *                         continue
  *                     bits = self.bitstream[:i]
  *                     if bits in huffman_code:             # <<<<<<<<<<<<<<
  *                         next_token = huffman_code[bits]
  *                         count = i
  */
-        __pyx_t_7 = (__Pyx_PyDict_ContainsTF(__pyx_v_bits, __pyx_v_huffman_code, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 405, __pyx_L1_error)
+        __pyx_t_7 = (__Pyx_PyDict_ContainsTF(__pyx_v_bits, __pyx_v_huffman_code, Py_EQ)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 410, __pyx_L1_error)
         if (__pyx_t_7) {
 
-          /* "thesis_toolkit.pyx":406
+          /* "thesis_toolkit.pyx":411
  *                     bits = self.bitstream[:i]
  *                     if bits in huffman_code:
  *                         next_token = huffman_code[bits]             # <<<<<<<<<<<<<<
  *                         count = i
  *                         break
  */
-          __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_huffman_code, __pyx_v_bits); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_huffman_code, __pyx_v_bits); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 406, __pyx_L1_error)
+          if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 411, __pyx_L1_error)
           __pyx_v_next_token = ((PyObject*)__pyx_t_2);
           __pyx_t_2 = 0;
 
-          /* "thesis_toolkit.pyx":407
+          /* "thesis_toolkit.pyx":412
  *                     if bits in huffman_code:
  *                         next_token = huffman_code[bits]
  *                         count = i             # <<<<<<<<<<<<<<
@@ -15797,7 +15864,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
           __pyx_v_count = __pyx_v_i;
 
-          /* "thesis_toolkit.pyx":408
+          /* "thesis_toolkit.pyx":413
  *                         next_token = huffman_code[bits]
  *                         count = i
  *                         break             # <<<<<<<<<<<<<<
@@ -15806,7 +15873,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
           goto __pyx_L25_break;
 
-          /* "thesis_toolkit.pyx":405
+          /* "thesis_toolkit.pyx":410
  *                         continue
  *                     bits = self.bitstream[:i]
  *                     if bits in huffman_code:             # <<<<<<<<<<<<<<
@@ -15818,26 +15885,26 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       }
       /*else*/ {
 
-        /* "thesis_toolkit.pyx":411
+        /* "thesis_toolkit.pyx":416
  *                 else:
  *                     # next_token = f"<{self.bitstream}>"
  *                     next_token = "<" + str(self.bitstream) + ">"             # <<<<<<<<<<<<<<
  *                     count = len(self.bitstream)
  * 
  */
-        __pyx_t_2 = __Pyx_PyStr_Str(__pyx_v_self->bitstream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyStr_Str(__pyx_v_self->bitstream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = PyNumber_Add(__pyx_kp_s__9, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
+        __pyx_t_1 = PyNumber_Add(__pyx_kp_s__9, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
+        __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 411, __pyx_L1_error)
+        if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 416, __pyx_L1_error)
         __pyx_v_next_token = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
 
-        /* "thesis_toolkit.pyx":412
+        /* "thesis_toolkit.pyx":417
  *                     # next_token = f"<{self.bitstream}>"
  *                     next_token = "<" + str(self.bitstream) + ">"
  *                     count = len(self.bitstream)             # <<<<<<<<<<<<<<
@@ -15846,13 +15913,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
         __pyx_t_2 = __pyx_v_self->bitstream;
         __Pyx_INCREF(__pyx_t_2);
-        __pyx_t_9 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 412, __pyx_L1_error)
+        __pyx_t_9 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 417, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_v_count = __pyx_t_9;
       }
       __pyx_L25_break:;
 
-      /* "thesis_toolkit.pyx":414
+      /* "thesis_toolkit.pyx":419
  *                     count = len(self.bitstream)
  * 
  *                 removed = self.bitstream[:count]             # <<<<<<<<<<<<<<
@@ -15861,14 +15928,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
       if (unlikely(__pyx_v_self->bitstream == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 414, __pyx_L1_error)
+        __PYX_ERR(0, 419, __pyx_L1_error)
       }
-      __pyx_t_2 = PySequence_GetSlice(__pyx_v_self->bitstream, 0, __pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 414, __pyx_L1_error)
+      __pyx_t_2 = PySequence_GetSlice(__pyx_v_self->bitstream, 0, __pyx_v_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 419, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_v_removed = ((PyObject*)__pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "thesis_toolkit.pyx":415
+      /* "thesis_toolkit.pyx":420
  * 
  *                 removed = self.bitstream[:count]
  *                 self.bitstream = self.bitstream[count:]             # <<<<<<<<<<<<<<
@@ -15877,9 +15944,9 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
       if (unlikely(__pyx_v_self->bitstream == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 415, __pyx_L1_error)
+        __PYX_ERR(0, 420, __pyx_L1_error)
       }
-      __pyx_t_2 = PySequence_GetSlice(__pyx_v_self->bitstream, __pyx_v_count, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 415, __pyx_L1_error)
+      __pyx_t_2 = PySequence_GetSlice(__pyx_v_self->bitstream, __pyx_v_count, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 420, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GIVEREF(__pyx_t_2);
       __Pyx_GOTREF(__pyx_v_self->bitstream);
@@ -15887,7 +15954,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       __pyx_v_self->bitstream = ((PyObject*)__pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "thesis_toolkit.pyx":394
+      /* "thesis_toolkit.pyx":399
  *         else:
  *             trans_matrix = self.get_transition_matrix(self.current_gram)
  *             if len(trans_matrix) > 1:             # <<<<<<<<<<<<<<
@@ -15897,7 +15964,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       goto __pyx_L5;
     }
 
-    /* "thesis_toolkit.pyx":417
+    /* "thesis_toolkit.pyx":422
  *                 self.bitstream = self.bitstream[count:]
  *             else:
  *                 next_token = list(trans_matrix.keys())[0]             # <<<<<<<<<<<<<<
@@ -15907,53 +15974,53 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
     /*else*/ {
       if (unlikely(__pyx_v_trans_matrix == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "keys");
-        __PYX_ERR(0, 417, __pyx_L1_error)
+        __PYX_ERR(0, 422, __pyx_L1_error)
       }
-      __pyx_t_2 = __Pyx_PyDict_Keys(__pyx_v_trans_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 417, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyDict_Keys(__pyx_v_trans_matrix); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PySequence_ListKeepNew(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 417, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PySequence_ListKeepNew(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 422, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 417, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 1, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 417, __pyx_L1_error)
+      if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 422, __pyx_L1_error)
       __pyx_v_next_token = ((PyObject*)__pyx_t_2);
       __pyx_t_2 = 0;
     }
     __pyx_L5:;
 
-    /* "thesis_toolkit.pyx":419
+    /* "thesis_toolkit.pyx":424
  *                 next_token = list(trans_matrix.keys())[0]
  * 
  *             next_gram = list(self.current_gram)             # <<<<<<<<<<<<<<
  *             next_gram.append(next_token)
  *             self.current_gram = tuple(next_gram[1:])
  */
-    __pyx_t_2 = PySequence_List(__pyx_v_self->current_gram); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 419, __pyx_L1_error)
+    __pyx_t_2 = PySequence_List(__pyx_v_self->current_gram); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 424, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_v_next_gram = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":420
+    /* "thesis_toolkit.pyx":425
  * 
  *             next_gram = list(self.current_gram)
  *             next_gram.append(next_token)             # <<<<<<<<<<<<<<
  *             self.current_gram = tuple(next_gram[1:])
  * 
  */
-    __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_next_gram, __pyx_v_next_token); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 420, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_next_gram, __pyx_v_next_token); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 425, __pyx_L1_error)
 
-    /* "thesis_toolkit.pyx":421
+    /* "thesis_toolkit.pyx":426
  *             next_gram = list(self.current_gram)
  *             next_gram.append(next_token)
  *             self.current_gram = tuple(next_gram[1:])             # <<<<<<<<<<<<<<
  * 
  *             if next_token != "___END__":
  */
-    __pyx_t_2 = __Pyx_PyList_GetSlice(__pyx_v_next_gram, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 421, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyList_GetSlice(__pyx_v_next_gram, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 426, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = PyList_AsTuple(((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 421, __pyx_L1_error)
+    __pyx_t_1 = PyList_AsTuple(((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 426, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GIVEREF(__pyx_t_1);
@@ -15962,17 +16029,17 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
     __pyx_v_self->current_gram = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "thesis_toolkit.pyx":423
+    /* "thesis_toolkit.pyx":428
  *             self.current_gram = tuple(next_gram[1:])
  * 
  *             if next_token != "___END__":             # <<<<<<<<<<<<<<
  *                 self.output_tokens.append(next_token)
  *             else:
  */
-    __pyx_t_7 = (__Pyx_PyString_Equals(__pyx_v_next_token, __pyx_n_s_END, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 423, __pyx_L1_error)
+    __pyx_t_7 = (__Pyx_PyString_Equals(__pyx_v_next_token, __pyx_n_s_END, Py_NE)); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 428, __pyx_L1_error)
     if (__pyx_t_7) {
 
-      /* "thesis_toolkit.pyx":424
+      /* "thesis_toolkit.pyx":429
  * 
  *             if next_token != "___END__":
  *                 self.output_tokens.append(next_token)             # <<<<<<<<<<<<<<
@@ -15981,11 +16048,11 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
       if (unlikely(__pyx_v_self->output_tokens == Py_None)) {
         PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "append");
-        __PYX_ERR(0, 424, __pyx_L1_error)
+        __PYX_ERR(0, 429, __pyx_L1_error)
       }
-      __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_self->output_tokens, __pyx_v_next_token); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 424, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyList_Append(__pyx_v_self->output_tokens, __pyx_v_next_token); if (unlikely(__pyx_t_5 == ((int)-1))) __PYX_ERR(0, 429, __pyx_L1_error)
 
-      /* "thesis_toolkit.pyx":423
+      /* "thesis_toolkit.pyx":428
  *             self.current_gram = tuple(next_gram[1:])
  * 
  *             if next_token != "___END__":             # <<<<<<<<<<<<<<
@@ -15995,7 +16062,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
       goto __pyx_L28;
     }
 
-    /* "thesis_toolkit.pyx":426
+    /* "thesis_toolkit.pyx":431
  *                 self.output_tokens.append(next_token)
  *             else:
  *                 self.exhausted = True             # <<<<<<<<<<<<<<
@@ -16005,7 +16072,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
     /*else*/ {
       __pyx_v_self->exhausted = 1;
 
-      /* "thesis_toolkit.pyx":427
+      /* "thesis_toolkit.pyx":432
  *             else:
  *                 self.exhausted = True
  *                 self.current_gram = None             # <<<<<<<<<<<<<<
@@ -16022,18 +16089,18 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
   }
   __pyx_L4:;
 
-  /* "thesis_toolkit.pyx":429
+  /* "thesis_toolkit.pyx":434
  *                 self.current_gram = None
  * 
  *         if not self.bitstream:             # <<<<<<<<<<<<<<
  *             self.finished = True
  * 
  */
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_self->bitstream); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_v_self->bitstream); if (unlikely((__pyx_t_7 < 0))) __PYX_ERR(0, 434, __pyx_L1_error)
   __pyx_t_15 = (!__pyx_t_7);
   if (__pyx_t_15) {
 
-    /* "thesis_toolkit.pyx":430
+    /* "thesis_toolkit.pyx":435
  * 
  *         if not self.bitstream:
  *             self.finished = True             # <<<<<<<<<<<<<<
@@ -16042,7 +16109,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
     __pyx_v_self->finished = 1;
 
-    /* "thesis_toolkit.pyx":429
+    /* "thesis_toolkit.pyx":434
  *                 self.current_gram = None
  * 
  *         if not self.bitstream:             # <<<<<<<<<<<<<<
@@ -16051,7 +16118,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
  */
   }
 
-  /* "thesis_toolkit.pyx":432
+  /* "thesis_toolkit.pyx":437
  *             self.finished = True
  * 
  *         return (self.bitstream_length - len(self.bitstream))/self.bitstream_length             # <<<<<<<<<<<<<<
@@ -16061,20 +16128,20 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __pyx_v_self->bitstream;
   __Pyx_INCREF(__pyx_t_1);
-  __pyx_t_9 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 432, __pyx_L1_error)
+  __pyx_t_9 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_9 == ((Py_ssize_t)-1))) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = (__pyx_v_self->bitstream_length - __pyx_t_9);
   if (unlikely(__pyx_v_self->bitstream_length == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 432, __pyx_L1_error)
+    __PYX_ERR(0, 437, __pyx_L1_error)
   }
-  __pyx_t_1 = PyFloat_FromDouble((((double)__pyx_t_6) / ((double)__pyx_v_self->bitstream_length))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 432, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble((((double)__pyx_t_6) / ((double)__pyx_v_self->bitstream_length))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":371
+  /* "thesis_toolkit.pyx":376
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -16109,7 +16176,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_2step(struct __pyx_
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":434
+/* "thesis_toolkit.pyx":439
  *         return (self.bitstream_length - len(self.bitstream))/self.bitstream_length
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
@@ -16170,12 +16237,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 434, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 439, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_transition_matrix") < 0)) __PYX_ERR(0, 434, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_transition_matrix") < 0)) __PYX_ERR(0, 439, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -16186,7 +16253,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_transition_matrix", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 434, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_transition_matrix", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 439, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16223,7 +16290,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_4get_transition_mat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_transition_matrix", 1);
 
-  /* "thesis_toolkit.pyx":435
+  /* "thesis_toolkit.pyx":440
  * 
  *     def get_transition_matrix(self, gram):
  *         return self.model.chain.model[gram]             # <<<<<<<<<<<<<<
@@ -16231,19 +16298,19 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_4get_transition_mat
  *     def generate(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_model); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_model); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_gram); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_gram); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":434
+  /* "thesis_toolkit.pyx":439
  *         return (self.bitstream_length - len(self.bitstream))/self.bitstream_length
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
@@ -16263,7 +16330,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_4get_transition_mat
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":437
+/* "thesis_toolkit.pyx":442
  *         return self.model.chain.model[gram]
  * 
  *     def generate(self):             # <<<<<<<<<<<<<<
@@ -16326,7 +16393,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6generate(struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("generate", 1);
 
-  /* "thesis_toolkit.pyx":439
+  /* "thesis_toolkit.pyx":444
  *     def generate(self):
  *         """Consumes the entire bitstream and generates the output for it."""
  *         while not self.finished:             # <<<<<<<<<<<<<<
@@ -16337,14 +16404,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6generate(struct __
     __pyx_t_1 = (!__pyx_v_self->finished);
     if (!__pyx_t_1) break;
 
-    /* "thesis_toolkit.pyx":440
+    /* "thesis_toolkit.pyx":445
  *         """Consumes the entire bitstream and generates the output for it."""
  *         while not self.finished:
  *             self.step()             # <<<<<<<<<<<<<<
  *         return self.output
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 445, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -16364,14 +16431,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6generate(struct __
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 445, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
 
-  /* "thesis_toolkit.pyx":441
+  /* "thesis_toolkit.pyx":446
  *         while not self.finished:
  *             self.step()
  *         return self.output             # <<<<<<<<<<<<<<
@@ -16379,13 +16446,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_6generate(struct __
  * cdef class ExistingDecoder:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_output); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_output); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":437
+  /* "thesis_toolkit.pyx":442
  *         return self.model.chain.model[gram]
  * 
  *     def generate(self):             # <<<<<<<<<<<<<<
@@ -16870,7 +16937,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingEncoder_10__setstate_cython
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":454
+/* "thesis_toolkit.pyx":459
  *     cdef str output
  * 
  *     def __init__(self, model, str stega_text):             # <<<<<<<<<<<<<<
@@ -16917,7 +16984,7 @@ static int __pyx_pw_14thesis_toolkit_15ExistingDecoder_1__init__(PyObject *__pyx
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 454, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 459, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -16925,14 +16992,14 @@ static int __pyx_pw_14thesis_toolkit_15ExistingDecoder_1__init__(PyObject *__pyx
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 454, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 459, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 454, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 459, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 454, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 459, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
@@ -16945,7 +17012,7 @@ static int __pyx_pw_14thesis_toolkit_15ExistingDecoder_1__init__(PyObject *__pyx
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 454, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 459, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16959,7 +17026,7 @@ static int __pyx_pw_14thesis_toolkit_15ExistingDecoder_1__init__(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_stega_text), (&PyString_Type), 1, "stega_text", 1))) __PYX_ERR(0, 454, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_stega_text), (&PyString_Type), 1, "stega_text", 1))) __PYX_ERR(0, 459, __pyx_L1_error)
   __pyx_r = __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(((struct __pyx_obj_14thesis_toolkit_ExistingDecoder *)__pyx_v_self), __pyx_v_model, __pyx_v_stega_text);
 
   /* function exit code */
@@ -16995,7 +17062,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "thesis_toolkit.pyx":455
+  /* "thesis_toolkit.pyx":460
  * 
  *     def __init__(self, model, str stega_text):
  *         self.model = model             # <<<<<<<<<<<<<<
@@ -17008,23 +17075,23 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->model);
   __pyx_v_self->model = __pyx_v_model;
 
-  /* "thesis_toolkit.pyx":456
+  /* "thesis_toolkit.pyx":461
  *     def __init__(self, model, str stega_text):
  *         self.model = model
  *         self.stega_text = stega_text.split(" ")             # <<<<<<<<<<<<<<
  *         self.entrypoints = [key[1] for key in model.chain.model.keys() if "___BEGIN__" in key][1:]
  *         self.endkey = 0
  */
-  __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_stega_text, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_stega_text, __pyx_kp_s__6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 456, __pyx_L1_error)
+  if (!(likely(PyList_CheckExact(__pyx_t_1))||((__pyx_t_1) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_1))) __PYX_ERR(0, 461, __pyx_L1_error)
   __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v_self->stega_text);
   __Pyx_DECREF(__pyx_v_self->stega_text);
   __pyx_v_self->stega_text = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "thesis_toolkit.pyx":457
+  /* "thesis_toolkit.pyx":462
  *         self.model = model
  *         self.stega_text = stega_text.split(" ")
  *         self.entrypoints = [key[1] for key in model.chain.model.keys() if "___BEGIN__" in key][1:]             # <<<<<<<<<<<<<<
@@ -17032,19 +17099,19 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
  *         self.current_gram = None
  */
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 457, __pyx_L5_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 462, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_3 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_model, __pyx_n_s_chain); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 457, __pyx_L5_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_model, __pyx_n_s_chain); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_model); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 457, __pyx_L5_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_model); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 462, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (unlikely(__pyx_t_7 == Py_None)) {
       PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "keys");
-      __PYX_ERR(0, 457, __pyx_L5_error)
+      __PYX_ERR(0, 462, __pyx_L5_error)
     }
-    __pyx_t_6 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_4), (&__pyx_t_5)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 457, __pyx_L5_error)
+    __pyx_t_6 = __Pyx_dict_iterator(__pyx_t_7, 0, __pyx_n_s_keys, (&__pyx_t_4), (&__pyx_t_5)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L5_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_XDECREF(__pyx_t_2);
@@ -17053,15 +17120,15 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
     while (1) {
       __pyx_t_8 = __Pyx_dict_iter_next(__pyx_t_2, __pyx_t_4, &__pyx_t_3, &__pyx_t_6, NULL, NULL, __pyx_t_5);
       if (unlikely(__pyx_t_8 == 0)) break;
-      if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 457, __pyx_L5_error)
+      if (unlikely(__pyx_t_8 == -1)) __PYX_ERR(0, 462, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_XDECREF_SET(__pyx_9genexpr12__pyx_v_key, __pyx_t_6);
       __pyx_t_6 = 0;
-      __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_BEGIN, __pyx_9genexpr12__pyx_v_key, Py_EQ)); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 457, __pyx_L5_error)
+      __pyx_t_9 = (__Pyx_PySequence_ContainsTF(__pyx_n_s_BEGIN, __pyx_9genexpr12__pyx_v_key, Py_EQ)); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 462, __pyx_L5_error)
       if (__pyx_t_9) {
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_9genexpr12__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 457, __pyx_L5_error)
+        __pyx_t_6 = __Pyx_GetItemInt(__pyx_9genexpr12__pyx_v_key, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_6);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 457, __pyx_L5_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 462, __pyx_L5_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
     }
@@ -17073,7 +17140,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
     goto __pyx_L1_error;
     __pyx_L9_exit_scope:;
   } /* exit inner scope */
-  __pyx_t_2 = __Pyx_PyList_GetSlice(__pyx_t_1, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 457, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyList_GetSlice(__pyx_t_1, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_GIVEREF(__pyx_t_2);
@@ -17082,7 +17149,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
   __pyx_v_self->entrypoints = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "thesis_toolkit.pyx":458
+  /* "thesis_toolkit.pyx":463
  *         self.stega_text = stega_text.split(" ")
  *         self.entrypoints = [key[1] for key in model.chain.model.keys() if "___BEGIN__" in key][1:]
  *         self.endkey = 0             # <<<<<<<<<<<<<<
@@ -17091,7 +17158,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
  */
   __pyx_v_self->endkey = 0;
 
-  /* "thesis_toolkit.pyx":459
+  /* "thesis_toolkit.pyx":464
  *         self.entrypoints = [key[1] for key in model.chain.model.keys() if "___BEGIN__" in key][1:]
  *         self.endkey = 0
  *         self.current_gram = None             # <<<<<<<<<<<<<<
@@ -17104,7 +17171,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->current_gram);
   __pyx_v_self->current_gram = Py_None;
 
-  /* "thesis_toolkit.pyx":460
+  /* "thesis_toolkit.pyx":465
  *         self.endkey = 0
  *         self.current_gram = None
  *         self.index = 0             # <<<<<<<<<<<<<<
@@ -17113,7 +17180,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
  */
   __pyx_v_self->index = 0;
 
-  /* "thesis_toolkit.pyx":461
+  /* "thesis_toolkit.pyx":466
  *         self.current_gram = None
  *         self.index = 0
  *         self.exhausted = True             # <<<<<<<<<<<<<<
@@ -17122,7 +17189,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
  */
   __pyx_v_self->exhausted = 1;
 
-  /* "thesis_toolkit.pyx":462
+  /* "thesis_toolkit.pyx":467
  *         self.index = 0
  *         self.exhausted = True
  *         self.finished = False             # <<<<<<<<<<<<<<
@@ -17131,7 +17198,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
  */
   __pyx_v_self->finished = 0;
 
-  /* "thesis_toolkit.pyx":463
+  /* "thesis_toolkit.pyx":468
  *         self.exhausted = True
  *         self.finished = False
  *         self.output = ""             # <<<<<<<<<<<<<<
@@ -17144,7 +17211,7 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
   __Pyx_DECREF(__pyx_v_self->output);
   __pyx_v_self->output = __pyx_kp_s__4;
 
-  /* "thesis_toolkit.pyx":454
+  /* "thesis_toolkit.pyx":459
  *     cdef str output
  * 
  *     def __init__(self, model, str stega_text):             # <<<<<<<<<<<<<<
@@ -17168,8 +17235,73 @@ static int __pyx_pf_14thesis_toolkit_15ExistingDecoder___init__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":465
+/* "thesis_toolkit.pyx":470
  *         self.output = ""
+ * 
+ *     @property             # <<<<<<<<<<<<<<
+ *     def index(self):
+ *         """Expose current decoding index for progress tracking."""
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_14thesis_toolkit_15ExistingDecoder_5index_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_14thesis_toolkit_15ExistingDecoder_5index_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_14thesis_toolkit_15ExistingDecoder_5index___get__(((struct __pyx_obj_14thesis_toolkit_ExistingDecoder *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_5index___get__(struct __pyx_obj_14thesis_toolkit_ExistingDecoder *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 1);
+
+  /* "thesis_toolkit.pyx":473
+ *     def index(self):
+ *         """Expose current decoding index for progress tracking."""
+ *         return self.index             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->index); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 473, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "thesis_toolkit.pyx":470
+ *         self.output = ""
+ * 
+ *     @property             # <<<<<<<<<<<<<<
+ *     def index(self):
+ *         """Expose current decoding index for progress tracking."""
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("thesis_toolkit.ExistingDecoder.index.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "thesis_toolkit.pyx":475
+ *         return self.index
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def output(self):
@@ -17196,7 +17328,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_6output___get__(str
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "thesis_toolkit.pyx":467
+  /* "thesis_toolkit.pyx":477
  *     @property
  *     def output(self):
  *         return self.output             # <<<<<<<<<<<<<<
@@ -17208,8 +17340,8 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_6output___get__(str
   __pyx_r = __pyx_v_self->output;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":465
- *         self.output = ""
+  /* "thesis_toolkit.pyx":475
+ *         return self.index
  * 
  *     @property             # <<<<<<<<<<<<<<
  *     def output(self):
@@ -17223,7 +17355,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_6output___get__(str
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":469
+/* "thesis_toolkit.pyx":479
  *         return self.output
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -17255,7 +17387,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_8finished___get__(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 1);
 
-  /* "thesis_toolkit.pyx":471
+  /* "thesis_toolkit.pyx":481
  *     @property
  *     def finished(self):
  *         return self.finished             # <<<<<<<<<<<<<<
@@ -17263,13 +17395,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_8finished___get__(s
  *     def step(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->finished); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->finished); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 481, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":469
+  /* "thesis_toolkit.pyx":479
  *         return self.output
  * 
  *     @property             # <<<<<<<<<<<<<<
@@ -17288,7 +17420,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_8finished___get__(s
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":473
+/* "thesis_toolkit.pyx":483
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -17338,7 +17470,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":504
+/* "thesis_toolkit.pyx":514
  *             if len(trans_matrix) > 1:
  *                 huffman_code = huffman.codebook([(k, v) for k, v in trans_matrix.items()])
  *                 tree_depth = max(map(lambda n: len(n), huffman_code.keys()))             # <<<<<<<<<<<<<<
@@ -17399,12 +17531,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 504, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 514, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda3") < 0)) __PYX_ERR(0, 504, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "lambda3") < 0)) __PYX_ERR(0, 514, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -17415,7 +17547,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("lambda3", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 504, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("lambda3", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 514, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -17452,8 +17584,8 @@ static PyObject *__pyx_lambda_funcdef_lambda3(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("lambda3", 1);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyObject_Length(__pyx_v_n); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 504, __pyx_L1_error)
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error)
+  __pyx_t_1 = PyObject_Length(__pyx_v_n); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 514, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
@@ -17470,7 +17602,7 @@ static PyObject *__pyx_lambda_funcdef_lambda3(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":473
+/* "thesis_toolkit.pyx":483
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -17514,7 +17646,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("step", 1);
 
-  /* "thesis_toolkit.pyx":479
+  /* "thesis_toolkit.pyx":489
  *             float: The progress of the decoding process.
  *         """
  *         cdef int matrix_limit = 10             # <<<<<<<<<<<<<<
@@ -17523,7 +17655,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
   __pyx_v_matrix_limit = 10;
 
-  /* "thesis_toolkit.pyx":480
+  /* "thesis_toolkit.pyx":490
  *         """
  *         cdef int matrix_limit = 10
  *         cdef int char_limit = 20             # <<<<<<<<<<<<<<
@@ -17532,7 +17664,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
   __pyx_v_char_limit = 20;
 
-  /* "thesis_toolkit.pyx":488
+  /* "thesis_toolkit.pyx":498
  *         cdef bint at_end
  * 
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:             # <<<<<<<<<<<<<<
@@ -17543,9 +17675,9 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   __Pyx_INCREF(__pyx_t_2);
   if (unlikely(__pyx_t_2 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 488, __pyx_L1_error)
+    __PYX_ERR(0, 498, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 488, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 498, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_v_self->index >= (__pyx_t_3 - 1));
   if (__pyx_t_4) {
@@ -17558,7 +17690,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "thesis_toolkit.pyx":489
+    /* "thesis_toolkit.pyx":499
  * 
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
  *             self.finished = True             # <<<<<<<<<<<<<<
@@ -17567,7 +17699,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
     __pyx_v_self->finished = 1;
 
-    /* "thesis_toolkit.pyx":490
+    /* "thesis_toolkit.pyx":500
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
  *             self.finished = True
  *             return             # <<<<<<<<<<<<<<
@@ -17578,7 +17710,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "thesis_toolkit.pyx":488
+    /* "thesis_toolkit.pyx":498
  *         cdef bint at_end
  * 
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:             # <<<<<<<<<<<<<<
@@ -17587,7 +17719,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
   }
 
-  /* "thesis_toolkit.pyx":492
+  /* "thesis_toolkit.pyx":502
  *             return
  * 
  *         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"             # <<<<<<<<<<<<<<
@@ -17596,7 +17728,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
   __pyx_t_5 = __pyx_v_self->output;
   __Pyx_INCREF(__pyx_t_5);
-  __pyx_t_3 = PyObject_Length(__pyx_t_5); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 492, __pyx_L1_error)
+  __pyx_t_3 = PyObject_Length(__pyx_t_5); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 502, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_1 = (__pyx_t_3 <= __pyx_v_char_limit);
   if (__pyx_t_1) {
@@ -17609,7 +17741,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   __pyx_v_previous = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "thesis_toolkit.pyx":493
+  /* "thesis_toolkit.pyx":503
  * 
  *         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"
  *         if self.exhausted:             # <<<<<<<<<<<<<<
@@ -17618,7 +17750,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
   if (__pyx_v_self->exhausted) {
 
-    /* "thesis_toolkit.pyx":494
+    /* "thesis_toolkit.pyx":504
  *         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"
  *         if self.exhausted:
  *             token = self.stega_text[self.index]             # <<<<<<<<<<<<<<
@@ -17627,36 +17759,36 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
     if (unlikely(__pyx_v_self->stega_text == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-      __PYX_ERR(0, 494, __pyx_L1_error)
+      __PYX_ERR(0, 504, __pyx_L1_error)
     }
-    __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_v_self->index, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 494, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_v_self->index, int, 1, __Pyx_PyInt_From_int, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 494, __pyx_L1_error)
+    if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 504, __pyx_L1_error)
     __pyx_v_token = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":495
+    /* "thesis_toolkit.pyx":505
  *         if self.exhausted:
  *             token = self.stega_text[self.index]
  *             self.current_gram = ("___BEGIN__", token)             # <<<<<<<<<<<<<<
  *             self.exhausted = False
  *         else:
  */
-    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 495, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 505, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_n_s_BEGIN);
     __Pyx_GIVEREF(__pyx_n_s_BEGIN);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_BEGIN)) __PYX_ERR(0, 495, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_n_s_BEGIN)) __PYX_ERR(0, 505, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_token);
     __Pyx_GIVEREF(__pyx_v_token);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_token)) __PYX_ERR(0, 495, __pyx_L1_error);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_token)) __PYX_ERR(0, 505, __pyx_L1_error);
     __Pyx_GIVEREF(__pyx_t_2);
     __Pyx_GOTREF(__pyx_v_self->current_gram);
     __Pyx_DECREF(__pyx_v_self->current_gram);
     __pyx_v_self->current_gram = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":496
+    /* "thesis_toolkit.pyx":506
  *             token = self.stega_text[self.index]
  *             self.current_gram = ("___BEGIN__", token)
  *             self.exhausted = False             # <<<<<<<<<<<<<<
@@ -17665,7 +17797,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
     __pyx_v_self->exhausted = 0;
 
-    /* "thesis_toolkit.pyx":493
+    /* "thesis_toolkit.pyx":503
  * 
  *         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"
  *         if self.exhausted:             # <<<<<<<<<<<<<<
@@ -17675,7 +17807,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     goto __pyx_L6;
   }
 
-  /* "thesis_toolkit.pyx":498
+  /* "thesis_toolkit.pyx":508
  *             self.exhausted = False
  *         else:
  *             trans_matrix = self.get_transition_matrix(self.current_gram)             # <<<<<<<<<<<<<<
@@ -17683,7 +17815,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  *             next_token = "" if at_end else self.stega_text[self.index + 1]
  */
   /*else*/ {
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_transition_matrix); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 498, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_get_transition_matrix); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 508, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     __pyx_t_7 = 0;
@@ -17703,15 +17835,15 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
       PyObject *__pyx_callargs[2] = {__pyx_t_6, __pyx_v_self->current_gram};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 508, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
-    if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_2))) __PYX_ERR(0, 498, __pyx_L1_error)
+    if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_2))) __PYX_ERR(0, 508, __pyx_L1_error)
     __pyx_v_trans_matrix = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":499
+    /* "thesis_toolkit.pyx":509
  *         else:
  *             trans_matrix = self.get_transition_matrix(self.current_gram)
  *             at_end = self.index == len(self.stega_text) - 1             # <<<<<<<<<<<<<<
@@ -17722,13 +17854,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     __Pyx_INCREF(__pyx_t_2);
     if (unlikely(__pyx_t_2 == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-      __PYX_ERR(0, 499, __pyx_L1_error)
+      __PYX_ERR(0, 509, __pyx_L1_error)
     }
-    __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 499, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyList_GET_SIZE(__pyx_t_2); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 509, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_at_end = (__pyx_v_self->index == (__pyx_t_3 - 1));
 
-    /* "thesis_toolkit.pyx":500
+    /* "thesis_toolkit.pyx":510
  *             trans_matrix = self.get_transition_matrix(self.current_gram)
  *             at_end = self.index == len(self.stega_text) - 1
  *             next_token = "" if at_end else self.stega_text[self.index + 1]             # <<<<<<<<<<<<<<
@@ -17741,19 +17873,19 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     } else {
       if (unlikely(__pyx_v_self->stega_text == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 500, __pyx_L1_error)
+        __PYX_ERR(0, 510, __pyx_L1_error)
       }
       __pyx_t_8 = (__pyx_v_self->index + 1);
-      __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_t_8, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 500, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetItemInt_List(__pyx_v_self->stega_text, __pyx_t_8, long, 1, __Pyx_PyInt_From_long, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 510, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      if (!(likely(PyString_CheckExact(__pyx_t_5))||((__pyx_t_5) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_5))) __PYX_ERR(0, 500, __pyx_L1_error)
+      if (!(likely(PyString_CheckExact(__pyx_t_5))||((__pyx_t_5) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_5))) __PYX_ERR(0, 510, __pyx_L1_error)
       __pyx_t_2 = __pyx_t_5;
       __pyx_t_5 = 0;
     }
     __pyx_v_next_token = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":502
+    /* "thesis_toolkit.pyx":512
  *             next_token = "" if at_end else self.stega_text[self.index + 1]
  * 
  *             if len(trans_matrix) > 1:             # <<<<<<<<<<<<<<
@@ -17762,33 +17894,33 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
     if (unlikely(__pyx_v_trans_matrix == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-      __PYX_ERR(0, 502, __pyx_L1_error)
+      __PYX_ERR(0, 512, __pyx_L1_error)
     }
-    __pyx_t_3 = PyDict_Size(__pyx_v_trans_matrix); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 502, __pyx_L1_error)
+    __pyx_t_3 = PyDict_Size(__pyx_v_trans_matrix); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(0, 512, __pyx_L1_error)
     __pyx_t_1 = (__pyx_t_3 > 1);
     if (__pyx_t_1) {
 
-      /* "thesis_toolkit.pyx":503
+      /* "thesis_toolkit.pyx":513
  * 
  *             if len(trans_matrix) > 1:
  *                 huffman_code = huffman.codebook([(k, v) for k, v in trans_matrix.items()])             # <<<<<<<<<<<<<<
  *                 tree_depth = max(map(lambda n: len(n), huffman_code.keys()))
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_huffman); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 503, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_huffman); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 513, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_codebook); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 503, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_codebook); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 513, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       { /* enter inner scope */
-        __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 503, __pyx_L10_error)
+        __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 513, __pyx_L10_error)
         __Pyx_GOTREF(__pyx_t_5);
         __pyx_t_3 = 0;
         if (unlikely(__pyx_v_trans_matrix == Py_None)) {
           PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "items");
-          __PYX_ERR(0, 503, __pyx_L10_error)
+          __PYX_ERR(0, 513, __pyx_L10_error)
         }
-        __pyx_t_12 = __Pyx_dict_iterator(__pyx_v_trans_matrix, 1, __pyx_n_s_items, (&__pyx_t_10), (&__pyx_t_11)); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 503, __pyx_L10_error)
+        __pyx_t_12 = __Pyx_dict_iterator(__pyx_v_trans_matrix, 1, __pyx_n_s_items, (&__pyx_t_10), (&__pyx_t_11)); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 513, __pyx_L10_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_XDECREF(__pyx_t_9);
         __pyx_t_9 = __pyx_t_12;
@@ -17796,22 +17928,22 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         while (1) {
           __pyx_t_14 = __Pyx_dict_iter_next(__pyx_t_9, __pyx_t_10, &__pyx_t_3, &__pyx_t_12, &__pyx_t_13, NULL, __pyx_t_11);
           if (unlikely(__pyx_t_14 == 0)) break;
-          if (unlikely(__pyx_t_14 == -1)) __PYX_ERR(0, 503, __pyx_L10_error)
+          if (unlikely(__pyx_t_14 == -1)) __PYX_ERR(0, 513, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_12);
           __Pyx_GOTREF(__pyx_t_13);
           __Pyx_XDECREF_SET(__pyx_9genexpr13__pyx_v_k, __pyx_t_12);
           __pyx_t_12 = 0;
           __Pyx_XDECREF_SET(__pyx_9genexpr13__pyx_v_v, __pyx_t_13);
           __pyx_t_13 = 0;
-          __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 503, __pyx_L10_error)
+          __pyx_t_13 = PyTuple_New(2); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 513, __pyx_L10_error)
           __Pyx_GOTREF(__pyx_t_13);
           __Pyx_INCREF(__pyx_9genexpr13__pyx_v_k);
           __Pyx_GIVEREF(__pyx_9genexpr13__pyx_v_k);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_9genexpr13__pyx_v_k)) __PYX_ERR(0, 503, __pyx_L10_error);
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_9genexpr13__pyx_v_k)) __PYX_ERR(0, 513, __pyx_L10_error);
           __Pyx_INCREF(__pyx_9genexpr13__pyx_v_v);
           __Pyx_GIVEREF(__pyx_9genexpr13__pyx_v_v);
-          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_9genexpr13__pyx_v_v)) __PYX_ERR(0, 503, __pyx_L10_error);
-          if (unlikely(__Pyx_ListComp_Append(__pyx_t_5, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 503, __pyx_L10_error)
+          if (__Pyx_PyTuple_SET_ITEM(__pyx_t_13, 1, __pyx_9genexpr13__pyx_v_v)) __PYX_ERR(0, 513, __pyx_L10_error);
+          if (unlikely(__Pyx_ListComp_Append(__pyx_t_5, (PyObject*)__pyx_t_13))) __PYX_ERR(0, 513, __pyx_L10_error)
           __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         }
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -17843,23 +17975,23 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 513, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       }
       __pyx_v_huffman_code = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "thesis_toolkit.pyx":504
+      /* "thesis_toolkit.pyx":514
  *             if len(trans_matrix) > 1:
  *                 huffman_code = huffman.codebook([(k, v) for k, v in trans_matrix.items()])
  *                 tree_depth = max(map(lambda n: len(n), huffman_code.keys()))             # <<<<<<<<<<<<<<
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:
  */
-      __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_4step_lambda3, 0, __pyx_n_s_step_locals_lambda, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_4step_lambda3, 0, __pyx_n_s_step_locals_lambda, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 514, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_huffman_code, __pyx_n_s_keys); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 504, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_huffman_code, __pyx_n_s_keys); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 514, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_9 = NULL;
       __pyx_t_7 = 0;
@@ -17879,41 +18011,41 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         PyObject *__pyx_callargs[2] = {__pyx_t_9, NULL};
         __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
         __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 504, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 514, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
-      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 504, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 514, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_2);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2)) __PYX_ERR(0, 514, __pyx_L1_error);
       __Pyx_GIVEREF(__pyx_t_6);
-      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_6)) __PYX_ERR(0, 504, __pyx_L1_error);
+      if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_6)) __PYX_ERR(0, 514, __pyx_L1_error);
       __pyx_t_2 = 0;
       __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 504, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 514, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 504, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_builtin_max, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 514, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 504, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_11 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 514, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_v_tree_depth = __pyx_t_11;
 
-      /* "thesis_toolkit.pyx":506
+      /* "thesis_toolkit.pyx":516
  *                 tree_depth = max(map(lambda n: len(n), huffman_code.keys()))
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:             # <<<<<<<<<<<<<<
  *                     if next_token not in trans_matrix:
  *                         next_token = "___END__"
  */
-      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_self->current_gram, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 506, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_GetItemInt(__pyx_v_self->current_gram, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 516, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_5, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 506, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_5, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 516, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_t_6, __pyx_kp_s__11, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 506, __pyx_L1_error)
+      __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_t_6, __pyx_kp_s__11, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 516, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_4) {
       } else {
@@ -17922,14 +18054,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
       }
       if (unlikely(__pyx_v_trans_matrix == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-        __PYX_ERR(0, 506, __pyx_L1_error)
+        __PYX_ERR(0, 516, __pyx_L1_error)
       }
-      __pyx_t_4 = (__Pyx_PyDict_ContainsTF(__pyx_n_s_END, __pyx_v_trans_matrix, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 506, __pyx_L1_error)
+      __pyx_t_4 = (__Pyx_PyDict_ContainsTF(__pyx_n_s_END, __pyx_v_trans_matrix, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 516, __pyx_L1_error)
       __pyx_t_1 = __pyx_t_4;
       __pyx_L15_bool_binop_done:;
       if (__pyx_t_1) {
 
-        /* "thesis_toolkit.pyx":507
+        /* "thesis_toolkit.pyx":517
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:
  *                     if next_token not in trans_matrix:             # <<<<<<<<<<<<<<
@@ -17938,12 +18070,12 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
         if (unlikely(__pyx_v_trans_matrix == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-          __PYX_ERR(0, 507, __pyx_L1_error)
+          __PYX_ERR(0, 517, __pyx_L1_error)
         }
-        __pyx_t_1 = (__Pyx_PyDict_ContainsTF(__pyx_v_next_token, __pyx_v_trans_matrix, Py_NE)); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 507, __pyx_L1_error)
+        __pyx_t_1 = (__Pyx_PyDict_ContainsTF(__pyx_v_next_token, __pyx_v_trans_matrix, Py_NE)); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 517, __pyx_L1_error)
         if (__pyx_t_1) {
 
-          /* "thesis_toolkit.pyx":508
+          /* "thesis_toolkit.pyx":518
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:
  *                     if next_token not in trans_matrix:
  *                         next_token = "___END__"             # <<<<<<<<<<<<<<
@@ -17953,7 +18085,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
           __Pyx_INCREF(__pyx_n_s_END);
           __Pyx_DECREF_SET(__pyx_v_next_token, __pyx_n_s_END);
 
-          /* "thesis_toolkit.pyx":509
+          /* "thesis_toolkit.pyx":519
  *                     if next_token not in trans_matrix:
  *                         next_token = "___END__"
  *                         self.exhausted = True             # <<<<<<<<<<<<<<
@@ -17962,7 +18094,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
           __pyx_v_self->exhausted = 1;
 
-          /* "thesis_toolkit.pyx":507
+          /* "thesis_toolkit.pyx":517
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:
  *                     if next_token not in trans_matrix:             # <<<<<<<<<<<<<<
@@ -17971,7 +18103,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
         }
 
-        /* "thesis_toolkit.pyx":506
+        /* "thesis_toolkit.pyx":516
  *                 tree_depth = max(map(lambda n: len(n), huffman_code.keys()))
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:             # <<<<<<<<<<<<<<
@@ -17980,16 +18112,16 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
       }
 
-      /* "thesis_toolkit.pyx":511
+      /* "thesis_toolkit.pyx":521
  *                         self.exhausted = True
  * 
  *                 if re.match(r"<[01]+>", next_token):             # <<<<<<<<<<<<<<
  *                     bit_string = ""
  *                     next_token = "INVALID TOKEN {next_token}"
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_re); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 511, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_re); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 521, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_match); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 511, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_match); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 521, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
@@ -18010,15 +18142,15 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         PyObject *__pyx_callargs[3] = {__pyx_t_5, __pyx_kp_s_01, __pyx_v_next_token};
         __pyx_t_6 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_7, 2+__pyx_t_7);
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 511, __pyx_L1_error)
+        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 521, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
-      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 511, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(0, 521, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       if (__pyx_t_1) {
 
-        /* "thesis_toolkit.pyx":512
+        /* "thesis_toolkit.pyx":522
  * 
  *                 if re.match(r"<[01]+>", next_token):
  *                     bit_string = ""             # <<<<<<<<<<<<<<
@@ -18028,7 +18160,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         __Pyx_INCREF(__pyx_kp_s__4);
         __pyx_v_bit_string = __pyx_kp_s__4;
 
-        /* "thesis_toolkit.pyx":513
+        /* "thesis_toolkit.pyx":523
  *                 if re.match(r"<[01]+>", next_token):
  *                     bit_string = ""
  *                     next_token = "INVALID TOKEN {next_token}"             # <<<<<<<<<<<<<<
@@ -18038,7 +18170,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         __Pyx_INCREF(__pyx_kp_s_INVALID_TOKEN_next_token);
         __Pyx_DECREF_SET(__pyx_v_next_token, __pyx_kp_s_INVALID_TOKEN_next_token);
 
-        /* "thesis_toolkit.pyx":511
+        /* "thesis_toolkit.pyx":521
  *                         self.exhausted = True
  * 
  *                 if re.match(r"<[01]+>", next_token):             # <<<<<<<<<<<<<<
@@ -18048,7 +18180,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         goto __pyx_L18;
       }
 
-      /* "thesis_toolkit.pyx":515
+      /* "thesis_toolkit.pyx":525
  *                     next_token = "INVALID TOKEN {next_token}"
  *                 else:
  *                     bit_string = "" if at_end else huffman_code[next_token]             # <<<<<<<<<<<<<<
@@ -18060,9 +18192,9 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
           __Pyx_INCREF(__pyx_kp_s__4);
           __pyx_t_6 = __pyx_kp_s__4;
         } else {
-          __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_huffman_code, __pyx_v_next_token); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
+          __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_v_huffman_code, __pyx_v_next_token); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 515, __pyx_L1_error)
+          if (!(likely(PyString_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("str", __pyx_t_2))) __PYX_ERR(0, 525, __pyx_L1_error)
           __pyx_t_6 = __pyx_t_2;
           __pyx_t_2 = 0;
         }
@@ -18071,7 +18203,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
       }
       __pyx_L18:;
 
-      /* "thesis_toolkit.pyx":502
+      /* "thesis_toolkit.pyx":512
  *             next_token = "" if at_end else self.stega_text[self.index + 1]
  * 
  *             if len(trans_matrix) > 1:             # <<<<<<<<<<<<<<
@@ -18081,7 +18213,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
       goto __pyx_L7;
     }
 
-    /* "thesis_toolkit.pyx":517
+    /* "thesis_toolkit.pyx":527
  *                     bit_string = "" if at_end else huffman_code[next_token]
  *             else:
  *                 tree_depth = 0             # <<<<<<<<<<<<<<
@@ -18091,7 +18223,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     /*else*/ {
       __pyx_v_tree_depth = 0;
 
-      /* "thesis_toolkit.pyx":518
+      /* "thesis_toolkit.pyx":528
  *             else:
  *                 tree_depth = 0
  *                 bit_string = ""             # <<<<<<<<<<<<<<
@@ -18101,19 +18233,19 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
       __Pyx_INCREF(__pyx_kp_s__4);
       __pyx_v_bit_string = __pyx_kp_s__4;
 
-      /* "thesis_toolkit.pyx":520
+      /* "thesis_toolkit.pyx":530
  *                 bit_string = ""
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:             # <<<<<<<<<<<<<<
  *                     next_token = "___END__"
  *                     self.exhausted = True
  */
-      __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_self->current_gram, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 520, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_self->current_gram, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 530, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_6, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 520, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_6, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 530, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_t_2, __pyx_kp_s__11, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 520, __pyx_L1_error)
+      __pyx_t_4 = (__Pyx_PySequence_ContainsTF(__pyx_t_2, __pyx_kp_s__11, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 530, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       if (__pyx_t_4) {
       } else {
@@ -18122,14 +18254,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
       }
       if (unlikely(__pyx_v_trans_matrix == Py_None)) {
         PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-        __PYX_ERR(0, 520, __pyx_L1_error)
+        __PYX_ERR(0, 530, __pyx_L1_error)
       }
-      __pyx_t_4 = (__Pyx_PyDict_ContainsTF(__pyx_n_s_END, __pyx_v_trans_matrix, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 520, __pyx_L1_error)
+      __pyx_t_4 = (__Pyx_PyDict_ContainsTF(__pyx_n_s_END, __pyx_v_trans_matrix, Py_EQ)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 530, __pyx_L1_error)
       __pyx_t_1 = __pyx_t_4;
       __pyx_L20_bool_binop_done:;
       if (__pyx_t_1) {
 
-        /* "thesis_toolkit.pyx":521
+        /* "thesis_toolkit.pyx":531
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:
  *                     next_token = "___END__"             # <<<<<<<<<<<<<<
@@ -18139,7 +18271,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
         __Pyx_INCREF(__pyx_n_s_END);
         __Pyx_DECREF_SET(__pyx_v_next_token, __pyx_n_s_END);
 
-        /* "thesis_toolkit.pyx":522
+        /* "thesis_toolkit.pyx":532
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:
  *                     next_token = "___END__"
  *                     self.exhausted = True             # <<<<<<<<<<<<<<
@@ -18148,7 +18280,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
         __pyx_v_self->exhausted = 1;
 
-        /* "thesis_toolkit.pyx":520
+        /* "thesis_toolkit.pyx":530
  *                 bit_string = ""
  * 
  *                 if self.current_gram[1][-1] in ".?!" and "___END__" in trans_matrix:             # <<<<<<<<<<<<<<
@@ -18159,37 +18291,37 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     }
     __pyx_L7:;
 
-    /* "thesis_toolkit.pyx":525
+    /* "thesis_toolkit.pyx":535
  * 
  * 
  *             next_gram = list(self.current_gram)             # <<<<<<<<<<<<<<
  *             next_gram.append(next_token)
  *             self.current_gram = tuple(next_gram[1:])
  */
-    __pyx_t_2 = PySequence_List(__pyx_v_self->current_gram); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L1_error)
+    __pyx_t_2 = PySequence_List(__pyx_v_self->current_gram); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 535, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_v_next_gram = ((PyObject*)__pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "thesis_toolkit.pyx":526
+    /* "thesis_toolkit.pyx":536
  * 
  *             next_gram = list(self.current_gram)
  *             next_gram.append(next_token)             # <<<<<<<<<<<<<<
  *             self.current_gram = tuple(next_gram[1:])
  * 
  */
-    __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_next_gram, __pyx_v_next_token); if (unlikely(__pyx_t_15 == ((int)-1))) __PYX_ERR(0, 526, __pyx_L1_error)
+    __pyx_t_15 = __Pyx_PyList_Append(__pyx_v_next_gram, __pyx_v_next_token); if (unlikely(__pyx_t_15 == ((int)-1))) __PYX_ERR(0, 536, __pyx_L1_error)
 
-    /* "thesis_toolkit.pyx":527
+    /* "thesis_toolkit.pyx":537
  *             next_gram = list(self.current_gram)
  *             next_gram.append(next_token)
  *             self.current_gram = tuple(next_gram[1:])             # <<<<<<<<<<<<<<
  * 
  *             self.index += 1
  */
-    __pyx_t_2 = __Pyx_PyList_GetSlice(__pyx_v_next_gram, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 527, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyList_GetSlice(__pyx_v_next_gram, 1, PY_SSIZE_T_MAX); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 537, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_6 = PyList_AsTuple(((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 527, __pyx_L1_error)
+    __pyx_t_6 = PyList_AsTuple(((PyObject*)__pyx_t_2)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 537, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GIVEREF(__pyx_t_6);
@@ -18198,7 +18330,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     __pyx_v_self->current_gram = __pyx_t_6;
     __pyx_t_6 = 0;
 
-    /* "thesis_toolkit.pyx":529
+    /* "thesis_toolkit.pyx":539
  *             self.current_gram = tuple(next_gram[1:])
  * 
  *             self.index += 1             # <<<<<<<<<<<<<<
@@ -18207,14 +18339,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  */
     __pyx_v_self->index = (__pyx_v_self->index + 1);
 
-    /* "thesis_toolkit.pyx":530
+    /* "thesis_toolkit.pyx":540
  * 
  *             self.index += 1
  *             self.output += bit_string             # <<<<<<<<<<<<<<
  * 
  *         return self.index / len(self.stega_text)
  */
-    __pyx_t_6 = __Pyx_PyStr_ConcatInPlaceSafe(__pyx_v_self->output, __pyx_v_bit_string); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 530, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyStr_ConcatInPlaceSafe(__pyx_v_self->output, __pyx_v_bit_string); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 540, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_6);
     __Pyx_GOTREF(__pyx_v_self->output);
@@ -18224,7 +18356,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   }
   __pyx_L6:;
 
-  /* "thesis_toolkit.pyx":532
+  /* "thesis_toolkit.pyx":542
  *             self.output += bit_string
  * 
  *         return self.index / len(self.stega_text)             # <<<<<<<<<<<<<<
@@ -18236,21 +18368,21 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   __Pyx_INCREF(__pyx_t_6);
   if (unlikely(__pyx_t_6 == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 532, __pyx_L1_error)
+    __PYX_ERR(0, 542, __pyx_L1_error)
   }
-  __pyx_t_10 = __Pyx_PyList_GET_SIZE(__pyx_t_6); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 532, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyList_GET_SIZE(__pyx_t_6); if (unlikely(__pyx_t_10 == ((Py_ssize_t)-1))) __PYX_ERR(0, 542, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   if (unlikely(__pyx_t_10 == 0)) {
     PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-    __PYX_ERR(0, 532, __pyx_L1_error)
+    __PYX_ERR(0, 542, __pyx_L1_error)
   }
-  __pyx_t_6 = PyFloat_FromDouble((((double)__pyx_v_self->index) / ((double)__pyx_t_10))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 532, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble((((double)__pyx_v_self->index) / ((double)__pyx_t_10))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 542, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_r = __pyx_t_6;
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":473
+  /* "thesis_toolkit.pyx":483
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
@@ -18283,7 +18415,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":534
+/* "thesis_toolkit.pyx":544
  *         return self.index / len(self.stega_text)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
@@ -18346,7 +18478,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_4solve(struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("solve", 1);
 
-  /* "thesis_toolkit.pyx":536
+  /* "thesis_toolkit.pyx":546
  *     def solve(self):
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:             # <<<<<<<<<<<<<<
@@ -18357,14 +18489,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_4solve(struct __pyx
     __pyx_t_1 = (!__pyx_v_self->finished);
     if (!__pyx_t_1) break;
 
-    /* "thesis_toolkit.pyx":537
+    /* "thesis_toolkit.pyx":547
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:
  *             self.step()             # <<<<<<<<<<<<<<
  * 
  *         return self.output
  */
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 537, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_step); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 547, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     __pyx_t_5 = 0;
@@ -18384,14 +18516,14 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_4solve(struct __pyx
       PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
       __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 0+__pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 537, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 547, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
 
-  /* "thesis_toolkit.pyx":539
+  /* "thesis_toolkit.pyx":549
  *             self.step()
  * 
  *         return self.output             # <<<<<<<<<<<<<<
@@ -18403,7 +18535,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_4solve(struct __pyx
   __pyx_r = __pyx_v_self->output;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":534
+  /* "thesis_toolkit.pyx":544
  *         return self.index / len(self.stega_text)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
@@ -18424,7 +18556,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_4solve(struct __pyx
   return __pyx_r;
 }
 
-/* "thesis_toolkit.pyx":541
+/* "thesis_toolkit.pyx":551
  *         return self.output
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
@@ -18484,12 +18616,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 541, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 551, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_transition_matrix") < 0)) __PYX_ERR(0, 541, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "get_transition_matrix") < 0)) __PYX_ERR(0, 551, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -18500,7 +18632,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_transition_matrix", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 541, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_transition_matrix", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 551, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -18537,25 +18669,25 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_6get_transition_mat
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_transition_matrix", 1);
 
-  /* "thesis_toolkit.pyx":542
+  /* "thesis_toolkit.pyx":552
  * 
  *     def get_transition_matrix(self, gram):
  *         return self.model.chain.model[gram]             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 542, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self->model, __pyx_n_s_chain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 552, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_model); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 542, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_model); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 552, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_gram); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 542, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_gram); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 552, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "thesis_toolkit.pyx":541
+  /* "thesis_toolkit.pyx":551
  *         return self.output
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
@@ -21448,6 +21580,10 @@ static int __pyx_tp_clear_14thesis_toolkit_EnhancedDecoder(PyObject *o) {
   return 0;
 }
 
+static PyObject *__pyx_getprop_14thesis_toolkit_15EnhancedDecoder_index(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_14thesis_toolkit_15EnhancedDecoder_5index_1__get__(o);
+}
+
 static PyObject *__pyx_getprop_14thesis_toolkit_15EnhancedDecoder_output(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_14thesis_toolkit_15EnhancedDecoder_6output_1__get__(o);
 }
@@ -21469,6 +21605,7 @@ static PyMethodDef __pyx_methods_14thesis_toolkit_EnhancedDecoder[] = {
 };
 
 static struct PyGetSetDef __pyx_getsets_14thesis_toolkit_EnhancedDecoder[] = {
+  {(char *)"index", __pyx_getprop_14thesis_toolkit_15EnhancedDecoder_index, 0, (char *)PyDoc_STR("Expose current decoding index for progress tracking."), 0},
   {(char *)"output", __pyx_getprop_14thesis_toolkit_15EnhancedDecoder_output, 0, (char *)0, 0},
   {(char *)"finished", __pyx_getprop_14thesis_toolkit_15EnhancedDecoder_finished, 0, (char *)0, 0},
   {0, 0, 0, 0, 0}
@@ -21875,6 +22012,10 @@ static int __pyx_tp_clear_14thesis_toolkit_ExistingDecoder(PyObject *o) {
   return 0;
 }
 
+static PyObject *__pyx_getprop_14thesis_toolkit_15ExistingDecoder_index(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_14thesis_toolkit_15ExistingDecoder_5index_1__get__(o);
+}
+
 static PyObject *__pyx_getprop_14thesis_toolkit_15ExistingDecoder_output(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_14thesis_toolkit_15ExistingDecoder_6output_1__get__(o);
 }
@@ -21893,6 +22034,7 @@ static PyMethodDef __pyx_methods_14thesis_toolkit_ExistingDecoder[] = {
 };
 
 static struct PyGetSetDef __pyx_getsets_14thesis_toolkit_ExistingDecoder[] = {
+  {(char *)"index", __pyx_getprop_14thesis_toolkit_15ExistingDecoder_index, 0, (char *)PyDoc_STR("Expose current decoding index for progress tracking."), 0},
   {(char *)"output", __pyx_getprop_14thesis_toolkit_15ExistingDecoder_output, 0, (char *)0, 0},
   {(char *)"finished", __pyx_getprop_14thesis_toolkit_15ExistingDecoder_finished, 0, (char *)0, 0},
   {0, 0, 0, 0, 0}
@@ -22416,8 +22558,8 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 56, __pyx_L1_error)
   __pyx_builtin_chr = __Pyx_GetBuiltinName(__pyx_n_s_chr); if (!__pyx_builtin_chr) __PYX_ERR(0, 161, __pyx_L1_error)
   __pyx_builtin_sorted = __Pyx_GetBuiltinName(__pyx_n_s_sorted); if (!__pyx_builtin_sorted) __PYX_ERR(0, 188, __pyx_L1_error)
-  __pyx_builtin_bin = __Pyx_GetBuiltinName(__pyx_n_s_bin); if (!__pyx_builtin_bin) __PYX_ERR(0, 269, __pyx_L1_error)
-  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 398, __pyx_L1_error)
+  __pyx_builtin_bin = __Pyx_GetBuiltinName(__pyx_n_s_bin); if (!__pyx_builtin_bin) __PYX_ERR(0, 274, __pyx_L1_error)
+  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 403, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 1043, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -22473,25 +22615,25 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "thesis_toolkit.pyx":262
+  /* "thesis_toolkit.pyx":267
  *         if token not in self.entrypoints:
  *             self.endkey = ord(token[-1]) - 97
  *             token = token[:-1]             # <<<<<<<<<<<<<<
  * 
  *         embedded_index = self.entrypoints.index(token)
  */
-  __pyx_slice__7 = PySlice_New(Py_None, __pyx_int_neg_1, Py_None); if (unlikely(!__pyx_slice__7)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_slice__7 = PySlice_New(Py_None, __pyx_int_neg_1, Py_None); if (unlikely(!__pyx_slice__7)) __PYX_ERR(0, 267, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__7);
   __Pyx_GIVEREF(__pyx_slice__7);
 
-  /* "thesis_toolkit.pyx":269
+  /* "thesis_toolkit.pyx":274
  *             bit_length -= 1
  *         bit_length = self.endkey if self.index == len(self.stega_text) - 1 else bit_length
  *         bit_string = bin(embedded_index)[2:].zfill(bit_length)             # <<<<<<<<<<<<<<
  * 
  *         self.current_gram = (token,) if self.model.state_size == 1 else (*["___BEGIN__"] * (self.model.state_size - 1), token)
  */
-  __pyx_slice__8 = PySlice_New(__pyx_int_2, Py_None, Py_None); if (unlikely(!__pyx_slice__8)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_slice__8 = PySlice_New(__pyx_int_2, Py_None, Py_None); if (unlikely(!__pyx_slice__8)) __PYX_ERR(0, 274, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__8);
   __Pyx_GIVEREF(__pyx_slice__8);
 
@@ -22674,65 +22816,65 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__42);
   __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) __PYX_ERR(2, 16, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":227
+  /* "thesis_toolkit.pyx":232
  *         return self.finished
  * 
  *     def _get_entrypoints(self):             # <<<<<<<<<<<<<<
  *         """Get valid entry points from the Markov model."""
  *         if self.model.state_size == 1:
  */
-  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_entrypoints, 227, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_entrypoints, 232, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 232, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":234
+  /* "thesis_toolkit.pyx":239
  *             return [key[-1] for key in self.model.chain.model.keys() if key.count("___BEGIN__") == self.model.state_size - 1][1:]
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
  *         """Consumes a word from the steganographic text and appends the appropriate bits to the output.
  * 
  */
-  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_step, 234, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_step, 239, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 239, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":254
+  /* "thesis_toolkit.pyx":259
  * 
  * 
  *     def _choose_entrypoint(self):             # <<<<<<<<<<<<<<
  *         """Choose a new starting point (entrypoint) for the Markov chain."""
  *         self.exhausted = False
  */
-  __pyx_tuple__46 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_token, __pyx_n_s_embedded_index, __pyx_n_s_bit_length, __pyx_n_s_bit_string); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 254, __pyx_L1_error)
+  __pyx_tuple__46 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_token, __pyx_n_s_embedded_index, __pyx_n_s_bit_length, __pyx_n_s_bit_string); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__46);
   __Pyx_GIVEREF(__pyx_tuple__46);
-  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_choose_entrypoint, 254, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 254, __pyx_L1_error)
+  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__46, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_choose_entrypoint, 259, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(0, 259, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":276
+  /* "thesis_toolkit.pyx":281
  *         self.output += bit_string
  * 
  *     def _choose_next_token(self):             # <<<<<<<<<<<<<<
  *         """Choose the next token in the Markov chain."""
  *         transitions = self._get_transitions(self.current_gram)
  */
-  __pyx_tuple__48 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_transitions, __pyx_n_s_at_end, __pyx_n_s_next_token, __pyx_n_s_list_length, __pyx_n_s_bit_length, __pyx_n_s_embedded_index, __pyx_n_s_bit_string, __pyx_n_s_next_gram); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 276, __pyx_L1_error)
+  __pyx_tuple__48 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_transitions, __pyx_n_s_at_end, __pyx_n_s_next_token, __pyx_n_s_list_length, __pyx_n_s_bit_length, __pyx_n_s_embedded_index, __pyx_n_s_bit_string, __pyx_n_s_next_gram); if (unlikely(!__pyx_tuple__48)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__48);
   __Pyx_GIVEREF(__pyx_tuple__48);
-  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_choose_next_token, 276, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 276, __pyx_L1_error)
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__48, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_choose_next_token, 281, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(0, 281, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":322
+  /* "thesis_toolkit.pyx":327
  * 
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:
  */
-  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_solve, 322, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_solve, 327, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 327, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":329
+  /* "thesis_toolkit.pyx":334
  *         return self.output
  * 
  *     def _get_transitions(self, gram):             # <<<<<<<<<<<<<<
  *         """Get possible transitions for the current gram in the Markov chain."""
  *         trans_matrix = self.model.chain.model[gram]
  */
-  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_transitions, 329, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__38, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_transitions, 334, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 334, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -22749,38 +22891,38 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  */
   __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(2, 16, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":371
+  /* "thesis_toolkit.pyx":376
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
  *         """Generates a new word for the output and appends it to the output string.
  * 
  */
-  __pyx_tuple__54 = PyTuple_Pack(17, __pyx_n_s_self, __pyx_n_s_char_limit, __pyx_n_s_matrix_limit, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_tree_depth, __pyx_n_s_bits, __pyx_n_s_next_token, __pyx_n_s_removed, __pyx_n_s_trans_matrix, __pyx_n_s_huffman_code, __pyx_n_s_next_gram, __pyx_n_s_k, __pyx_n_s_v, __pyx_n_s_k, __pyx_n_s_v, __pyx_n_s_n); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_tuple__54 = PyTuple_Pack(17, __pyx_n_s_self, __pyx_n_s_char_limit, __pyx_n_s_matrix_limit, __pyx_n_s_i, __pyx_n_s_count, __pyx_n_s_tree_depth, __pyx_n_s_bits, __pyx_n_s_next_token, __pyx_n_s_removed, __pyx_n_s_trans_matrix, __pyx_n_s_huffman_code, __pyx_n_s_next_gram, __pyx_n_s_k, __pyx_n_s_v, __pyx_n_s_k, __pyx_n_s_v, __pyx_n_s_n); if (unlikely(!__pyx_tuple__54)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__54);
   __Pyx_GIVEREF(__pyx_tuple__54);
-  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_step, 371, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 17, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__54, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_step, 376, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(0, 376, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":434
+  /* "thesis_toolkit.pyx":439
  *         return (self.bitstream_length - len(self.bitstream))/self.bitstream_length
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
  *         return self.model.chain.model[gram]
  * 
  */
-  __pyx_tuple__56 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_gram); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_tuple__56 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_gram); if (unlikely(!__pyx_tuple__56)) __PYX_ERR(0, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__56);
   __Pyx_GIVEREF(__pyx_tuple__56);
-  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__56, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_transition_matrix, 434, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__56, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_transition_matrix, 439, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(0, 439, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":437
+  /* "thesis_toolkit.pyx":442
  *         return self.model.chain.model[gram]
  * 
  *     def generate(self):             # <<<<<<<<<<<<<<
  *         """Consumes the entire bitstream and generates the output for it."""
  *         while not self.finished:
  */
-  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_generate, 437, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 437, __pyx_L1_error)
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_generate, 442, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 442, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -22797,34 +22939,34 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  */
   __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__42, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(2, 16, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":473
+  /* "thesis_toolkit.pyx":483
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
  *         """Consumes a word from the steganographic text and appends the appropriate bits to the output.
  * 
  */
-  __pyx_tuple__61 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_matrix_limit, __pyx_n_s_char_limit, __pyx_n_s_trans_matrix, __pyx_n_s_previous, __pyx_n_s_token, __pyx_n_s_next_token, __pyx_n_s_bit_string, __pyx_n_s_next_gram, __pyx_n_s_tree_depth, __pyx_n_s_huffman_code, __pyx_n_s_at_end, __pyx_n_s_k, __pyx_n_s_v); if (unlikely(!__pyx_tuple__61)) __PYX_ERR(0, 473, __pyx_L1_error)
+  __pyx_tuple__61 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_matrix_limit, __pyx_n_s_char_limit, __pyx_n_s_trans_matrix, __pyx_n_s_previous, __pyx_n_s_token, __pyx_n_s_next_token, __pyx_n_s_bit_string, __pyx_n_s_next_gram, __pyx_n_s_tree_depth, __pyx_n_s_huffman_code, __pyx_n_s_at_end, __pyx_n_s_k, __pyx_n_s_v); if (unlikely(!__pyx_tuple__61)) __PYX_ERR(0, 483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__61);
   __Pyx_GIVEREF(__pyx_tuple__61);
-  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__61, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_step, 473, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(0, 473, __pyx_L1_error)
+  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__61, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_step, 483, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(0, 483, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":534
+  /* "thesis_toolkit.pyx":544
  *         return self.index / len(self.stega_text)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:
  */
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_solve, 534, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 534, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_solve, 544, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 544, __pyx_L1_error)
 
-  /* "thesis_toolkit.pyx":541
+  /* "thesis_toolkit.pyx":551
  *         return self.output
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
  *         return self.model.chain.model[gram]
  */
-  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__56, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_transition_matrix, 541, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(0, 541, __pyx_L1_error)
+  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__56, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_thesis_toolkit_pyx, __pyx_n_s_get_transition_matrix, 551, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(0, 551, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
@@ -22998,15 +23140,15 @@ static int __Pyx_modinit_type_init_code(void) {
   if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_14thesis_toolkit_EnhancedDecoder) < 0) __PYX_ERR(0, 192, __pyx_L1_error)
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_14thesis_toolkit_ExistingEncoder = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_14thesis_toolkit_ExistingEncoder_spec, NULL); if (unlikely(!__pyx_ptype_14thesis_toolkit_ExistingEncoder)) __PYX_ERR(0, 337, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_14thesis_toolkit_ExistingEncoder_spec, __pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  __pyx_ptype_14thesis_toolkit_ExistingEncoder = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_14thesis_toolkit_ExistingEncoder_spec, NULL); if (unlikely(!__pyx_ptype_14thesis_toolkit_ExistingEncoder)) __PYX_ERR(0, 342, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_14thesis_toolkit_ExistingEncoder_spec, __pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 342, __pyx_L1_error)
   #else
   __pyx_ptype_14thesis_toolkit_ExistingEncoder = &__pyx_type_14thesis_toolkit_ExistingEncoder;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 342, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_14thesis_toolkit_ExistingEncoder->tp_print = 0;
@@ -23016,20 +23158,20 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_14thesis_toolkit_ExistingEncoder->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ExistingEncoder, (PyObject *) __pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ExistingEncoder, (PyObject *) __pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 342, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_14thesis_toolkit_ExistingEncoder) < 0) __PYX_ERR(0, 342, __pyx_L1_error)
   #endif
   #if CYTHON_USE_TYPE_SPECS
-  __pyx_ptype_14thesis_toolkit_ExistingDecoder = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_14thesis_toolkit_ExistingDecoder_spec, NULL); if (unlikely(!__pyx_ptype_14thesis_toolkit_ExistingDecoder)) __PYX_ERR(0, 443, __pyx_L1_error)
-  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_14thesis_toolkit_ExistingDecoder_spec, __pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_ptype_14thesis_toolkit_ExistingDecoder = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_14thesis_toolkit_ExistingDecoder_spec, NULL); if (unlikely(!__pyx_ptype_14thesis_toolkit_ExistingDecoder)) __PYX_ERR(0, 448, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_14thesis_toolkit_ExistingDecoder_spec, __pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
   #else
   __pyx_ptype_14thesis_toolkit_ExistingDecoder = &__pyx_type_14thesis_toolkit_ExistingDecoder;
   #endif
   #if !CYTHON_COMPILING_IN_LIMITED_API
   #endif
   #if !CYTHON_USE_TYPE_SPECS
-  if (__Pyx_PyType_Ready(__pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__Pyx_PyType_Ready(__pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
   #endif
   #if PY_MAJOR_VERSION < 3
   __pyx_ptype_14thesis_toolkit_ExistingDecoder->tp_print = 0;
@@ -23039,9 +23181,9 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_ptype_14thesis_toolkit_ExistingDecoder->tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
   #endif
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ExistingDecoder, (PyObject *) __pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_ExistingDecoder, (PyObject *) __pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
-  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_14thesis_toolkit_ExistingDecoder) < 0) __PYX_ERR(0, 448, __pyx_L1_error)
   #endif
   #if CYTHON_USE_TYPE_SPECS
   __pyx_ptype_14thesis_toolkit___pyx_scope_struct__genexpr = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_14thesis_toolkit___pyx_scope_struct__genexpr_spec, NULL); if (unlikely(!__pyx_ptype_14thesis_toolkit___pyx_scope_struct__genexpr)) __PYX_ERR(0, 57, __pyx_L1_error)
@@ -23711,81 +23853,81 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedEncoder);
 
-  /* "thesis_toolkit.pyx":227
+  /* "thesis_toolkit.pyx":232
  *         return self.finished
  * 
  *     def _get_entrypoints(self):             # <<<<<<<<<<<<<<
  *         """Get valid entry points from the Markov model."""
  *         if self.model.state_size == 1:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_3_get_entrypoints, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__get_entrypoints, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 227, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_3_get_entrypoints, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__get_entrypoints, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_get_entrypoints, __pyx_t_2) < 0) __PYX_ERR(0, 227, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_get_entrypoints, __pyx_t_2) < 0) __PYX_ERR(0, 232, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
-  /* "thesis_toolkit.pyx":234
+  /* "thesis_toolkit.pyx":239
  *             return [key[-1] for key in self.model.chain.model.keys() if key.count("___BEGIN__") == self.model.state_size - 1][1:]
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
  *         """Consumes a word from the steganographic text and appends the appropriate bits to the output.
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_5step, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder_step, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 234, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_5step, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder_step, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_step, __pyx_t_2) < 0) __PYX_ERR(0, 234, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_step, __pyx_t_2) < 0) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
-  /* "thesis_toolkit.pyx":254
+  /* "thesis_toolkit.pyx":259
  * 
  * 
  *     def _choose_entrypoint(self):             # <<<<<<<<<<<<<<
  *         """Choose a new starting point (entrypoint) for the Markov chain."""
  *         self.exhausted = False
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_7_choose_entrypoint, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__choose_entrypoi, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 254, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_7_choose_entrypoint, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__choose_entrypoi, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_choose_entrypoint, __pyx_t_2) < 0) __PYX_ERR(0, 254, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_choose_entrypoint, __pyx_t_2) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
-  /* "thesis_toolkit.pyx":276
+  /* "thesis_toolkit.pyx":281
  *         self.output += bit_string
  * 
  *     def _choose_next_token(self):             # <<<<<<<<<<<<<<
  *         """Choose the next token in the Markov chain."""
  *         transitions = self._get_transitions(self.current_gram)
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_9_choose_next_token, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__choose_next_tok, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 276, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_9_choose_next_token, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__choose_next_tok, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_choose_next_token, __pyx_t_2) < 0) __PYX_ERR(0, 276, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_choose_next_token, __pyx_t_2) < 0) __PYX_ERR(0, 281, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
-  /* "thesis_toolkit.pyx":322
+  /* "thesis_toolkit.pyx":327
  * 
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_11solve, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder_solve, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_11solve, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder_solve, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_solve, __pyx_t_2) < 0) __PYX_ERR(0, 322, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_solve, __pyx_t_2) < 0) __PYX_ERR(0, 327, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
-  /* "thesis_toolkit.pyx":329
+  /* "thesis_toolkit.pyx":334
  *         return self.output
  * 
  *     def _get_transitions(self, gram):             # <<<<<<<<<<<<<<
  *         """Get possible transitions for the current gram in the Markov chain."""
  *         trans_matrix = self.model.chain.model[gram]
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_13_get_transitions, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__get_transitions, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 329, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15EnhancedDecoder_13_get_transitions, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_EnhancedDecoder__get_transitions, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 334, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_get_transitions, __pyx_t_2) < 0) __PYX_ERR(0, 329, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_EnhancedDecoder, __pyx_n_s_get_transitions, __pyx_t_2) < 0) __PYX_ERR(0, 334, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
@@ -23812,42 +23954,42 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_EnhancedDecoder);
 
-  /* "thesis_toolkit.pyx":371
+  /* "thesis_toolkit.pyx":376
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
  *         """Generates a new word for the output and appends it to the output string.
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingEncoder_3step, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingEncoder_step, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingEncoder_3step, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingEncoder_step, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingEncoder, __pyx_n_s_step, __pyx_t_2) < 0) __PYX_ERR(0, 371, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingEncoder, __pyx_n_s_step, __pyx_t_2) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingEncoder);
 
-  /* "thesis_toolkit.pyx":434
+  /* "thesis_toolkit.pyx":439
  *         return (self.bitstream_length - len(self.bitstream))/self.bitstream_length
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
  *         return self.model.chain.model[gram]
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingEncoder_5get_transition_matrix, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingEncoder_get_transition_m, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingEncoder_5get_transition_matrix, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingEncoder_get_transition_m, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingEncoder, __pyx_n_s_get_transition_matrix, __pyx_t_2) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingEncoder, __pyx_n_s_get_transition_matrix, __pyx_t_2) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingEncoder);
 
-  /* "thesis_toolkit.pyx":437
+  /* "thesis_toolkit.pyx":442
  *         return self.model.chain.model[gram]
  * 
  *     def generate(self):             # <<<<<<<<<<<<<<
  *         """Consumes the entire bitstream and generates the output for it."""
  *         while not self.finished:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingEncoder_7generate, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingEncoder_generate, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingEncoder_7generate, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingEncoder_generate, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingEncoder, __pyx_n_s_generate, __pyx_t_2) < 0) __PYX_ERR(0, 437, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingEncoder, __pyx_n_s_generate, __pyx_t_2) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingEncoder);
 
@@ -23874,41 +24016,41 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingEncoder);
 
-  /* "thesis_toolkit.pyx":473
+  /* "thesis_toolkit.pyx":483
  *         return self.finished
  * 
  *     def step(self):             # <<<<<<<<<<<<<<
  *         """Consumes a word from the steganographic text and appends the appropriate bits to the output.
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_3step, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingDecoder_step, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 473, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_3step, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingDecoder_step, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingDecoder, __pyx_n_s_step, __pyx_t_2) < 0) __PYX_ERR(0, 473, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingDecoder, __pyx_n_s_step, __pyx_t_2) < 0) __PYX_ERR(0, 483, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingDecoder);
 
-  /* "thesis_toolkit.pyx":534
+  /* "thesis_toolkit.pyx":544
  *         return self.index / len(self.stega_text)
  * 
  *     def solve(self):             # <<<<<<<<<<<<<<
  *         """Consumes the entire steganographic text and generates an output bitstream."""
  *         while not self.finished:
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_5solve, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingDecoder_solve, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 534, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_5solve, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingDecoder_solve, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 544, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingDecoder, __pyx_n_s_solve, __pyx_t_2) < 0) __PYX_ERR(0, 534, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingDecoder, __pyx_n_s_solve, __pyx_t_2) < 0) __PYX_ERR(0, 544, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingDecoder);
 
-  /* "thesis_toolkit.pyx":541
+  /* "thesis_toolkit.pyx":551
  *         return self.output
  * 
  *     def get_transition_matrix(self, gram):             # <<<<<<<<<<<<<<
  *         return self.model.chain.model[gram]
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_7get_transition_matrix, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingDecoder_get_transition_m, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 541, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_14thesis_toolkit_15ExistingDecoder_7get_transition_matrix, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_ExistingDecoder_get_transition_m, NULL, __pyx_n_s_thesis_toolkit, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 551, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingDecoder, __pyx_n_s_get_transition_matrix, __pyx_t_2) < 0) __PYX_ERR(0, 541, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_14thesis_toolkit_ExistingDecoder, __pyx_n_s_get_transition_matrix, __pyx_t_2) < 0) __PYX_ERR(0, 551, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_14thesis_toolkit_ExistingDecoder);
 

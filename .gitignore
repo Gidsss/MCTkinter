@@ -3,3 +3,10 @@ venv/
 
 # Ignore markov models
 markov_models/
+
+# Ignore database
+*.db
+*.sqlite3
+
+# Ignore outputs
+outputs/

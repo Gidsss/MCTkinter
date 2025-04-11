@@ -217,6 +217,11 @@ cdef class EnhancedDecoder:
         self.endkey = 0
 
     @property
+    def index(self):
+        """Expose current decoding index for progress tracking."""
+        return self.index
+
+    @property
     def output(self):
         return self.output
 
@@ -462,6 +467,11 @@ cdef class ExistingDecoder:
         self.finished = False
         self.output = ""
 
+    @property
+    def index(self):
+        """Expose current decoding index for progress tracking."""
+        return self.index
+        
     @property
     def output(self):
         return self.output
