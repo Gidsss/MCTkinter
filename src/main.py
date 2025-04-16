@@ -154,10 +154,10 @@ class SteganographyApp:
             messagebox.showwarning("Selection Error", "Please select a file from the table.")
             return
 
-        file_name = self.file_table.item(selected_item, "values")[0]
+        file_name, algorithm = self.file_table.item(selected_item, "values")[:2]
 
         try:
-            encoded_text = get_encoded_text(file_name, "encode")
+            encoded_text = get_encoded_text(file_name, algorithm)
             if not encoded_text:
                 messagebox.showwarning("Data Not Found", "Encoded text not found in the database.")
                 return

@@ -58,16 +58,16 @@ def get_all_files():
         logging.error(f"Error retrieving file records: {e}")
         return []
 
-def get_encoded_text(file_name, operation="encode"):
+def get_encoded_text(file_name, algorithm):
     """Retrieve encoded text for a specific file from the database."""
     try:
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
         cursor.execute('''
             SELECT encoded_text FROM file_history
-            WHERE file_name = ? AND operation = ?
+            WHERE file_name = ? AND algorithm = ?
             ORDER BY timestamp DESC LIMIT 1
-        ''', (file_name, operation))
+        ''', (file_name, algorithm))
         result = cursor.fetchone()
         conn.close()
 
