@@ -226,7 +226,8 @@ class SteganographyApp:
 
     def start_decoding_with_progress(self, encoded_text, file_name):
         """Decode with progress bar and display result file + metrics."""
-        algorithm = self.algorithm.get()
+        selected_item = self.file_table.selection()
+        algorithm = self.file_table.item(selected_item, "values")[1]
 
         progress_window = tk.Toplevel(self.root)
         progress_window.title("Decoding Progress")
@@ -241,37 +242,35 @@ class SteganographyApp:
         progress_bar = ttk.Progressbar(progress_window, length=300, mode="determinate")
         progress_bar.pack(pady=10)
 
-        progress = {'value': 0, 'finished': False}
+        progress = {'value': 0}
         start_time = time.time()
 
         def update_progress_bar():
-            if progress['finished']:
+            elapsed_time = time.time() - start_time
+
+            if progress['value'] == 100:
+                progress_window.destroy()
                 return
-            elapsed = time.time() - start_time
+            
+            # Update time and percent labels
+            time_label.config(text=f"Time Elapsed: {elapsed_time:.2f} seconds | {progress['value']:.2f}%")
+
+            # Update progress bar
             progress_bar['value'] = progress['value']
-            time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | {progress['value']}%")
             self.root.update_idletasks()
             self.root.after(100, update_progress_bar)
 
         def decode_task():
             try:
                 decoder = ExistingDecoder(model, encoded_text) if algorithm == "Existing Algorithm" else EnhancedDecoder(model, encoded_text)
-                total_tokens = len(encoded_text.split(" "))
-                decoded_bits = ""
-
                 while not decoder.finished:
-                    decoder.step()
-                    progress['value'] = min(int((decoder.index / total_tokens) * 100), 100)
+                    progress['value'] = decoder.step() * 100
 
-                decoded_bits = decoder.solve()
-                elapsed = time.time() - start_time
-
+                decoded_bits = decoder.output
                 output_path = os.path.join(OUTPUT_DIR, f"decoded_{file_name}")
                 bitstream_to_file(decoded_bits, output_path)
 
-                progress['value'] = 100
-                progress['finished'] = True
-                progress_window.destroy()
+                elapsed = time.time() - start_time
                 self.show_decoded_file(output_path, elapsed)
 
             except Exception as e:
