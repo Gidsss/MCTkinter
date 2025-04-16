@@ -103,85 +103,32 @@ class SteganographyApp:
                 progress_bar.pack(pady=10)
 
                 start_time = time.time()
-                progress = {
-                    'value': 0,
-                    'finished': False,
-                    'finished_ui': False,
-                    'started': True,
-                    'paused_at_99': False
-                }
+                progress = {'value': 0}
 
                 def update_progress_bar():
-                    if not progress.get('started') or not progress_window.winfo_exists():
+                    elapsed_time = time.time() - start_time
+
+                    # Once finished, destroy window and quit loop
+                    if progress['value'] == 100:
+                        messagebox.showinfo("Encoding Complete", f"Encoding finished.\nTime Elapsed: {elapsed_time:.2f} seconds")
+                        progress_window.destroy()
                         return
 
-                    elapsed = time.time() - start_time
-                    current_value = progress_bar['value']
-                    target_value = progress['value']
+                    # Update time and percent labels
+                    time_label.config(text=f"Time Elapsed: {elapsed_time:.2f} seconds | {progress['value']:.2f}%")
 
-                    if target_value > current_value:
-                        # Pause at 99% 
-                        if target_value == 100 and current_value >= 98 and not progress['paused_at_99']:
-                            progress['paused_at_99'] = True
-                            progress_bar['value'] = 99
-                            time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | 99%")
-
-                            def resume_to_100():
-                                if progress_window.winfo_exists():
-                                    progress_bar['value'] = 100
-                                    time_label.config(text=f"Time Elapsed: {time.time() - start_time:.2f} seconds | 100%")
-                                    progress_window.update_idletasks()
-
-                                    # Delay UI finalization and messagebox slightly to show 100%
-                                    def finalize():
-                                        if progress_window.winfo_exists():
-                                            messagebox.showinfo("Encoding Complete", f"Encoding finished.\nTime Elapsed: {time.time() - start_time:.2f} seconds")
-                                            progress_window.destroy()
-
-                                    progress['finished_ui'] = True
-                                    self.root.after(300, finalize)
-
-                            self.root.after(500, resume_to_100)
-                            return
-
-                        new_value = min(current_value + 1, target_value)
-                        progress_bar['value'] = new_value
-                        time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | {new_value}%")
-
-                    elif target_value == 100 and current_value == 100 and not progress['finished_ui']:
-                        progress['finished_ui'] = True
-
+                    # Update progress bar
+                    progress_bar['value'] = progress['value']
                     progress_window.update_idletasks()
-
-                    if not progress.get('finished_ui'):
-                        self.root.after(100, update_progress_bar)
+                    self.root.after(100, update_progress_bar)
 
                 def encode_task():
                     try:
                         encoder = ExistingEncoder(model, bitstream) if algorithm == "Existing Algorithm" else EnhancedEncoder(model, bitstream)
-                        initial_estimated_steps = max(1, len(bitstream) // 8)
-                        estimated_steps = initial_estimated_steps
-                        current_step = 0
-
                         while not encoder.finished:
-                            encoder.step()
-                            current_step += 1
-
-                            if current_step >= estimated_steps and not encoder.finished:
-                                estimated_steps += int(estimated_steps * 0.1)
-
-                            raw_progress = int((current_step / initial_estimated_steps) * 100)
-                            progress['value'] = min(raw_progress, 100)
-
-                        # Final update
-                        progress['value'] = 100
-                        progress['finished'] = True
-                        progress['finished_ui'] = False
-                        progress['started'] = True
+                            progress['value'] = encoder.step() * 100
 
                         encoded_text = encoder.output
-                        elapsed = time.time() - start_time
-
                         save_file_record(file_name, algorithm, "encode", encoded_text)
                         self.file_table.insert("", "end", values=(file_name, algorithm, "encode", time.strftime("%Y-%m-%d %H:%M:%S"), "View/Decode"))
 
@@ -191,6 +138,7 @@ class SteganographyApp:
                         progress['finished'] = True
                         if progress_window.winfo_exists():
                             progress_window.destroy()
+
 
                 self.root.after(500, update_progress_bar)
                 threading.Thread(target=encode_task, daemon=True).start()
