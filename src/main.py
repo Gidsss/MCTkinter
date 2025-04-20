@@ -7,6 +7,7 @@ import tkinter as tk
 import pickle
 from tkinter import filedialog, messagebox, ttk, scrolledtext
 from tqdm import tqdm
+import sqlite3
 
 # Set up logging configuration
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s - %(message)s')
@@ -55,17 +56,20 @@ class SteganographyApp:
         self.upload_button.pack(pady=5)
 
         # File Table (Treeview)
-        self.file_table = ttk.Treeview(root, columns=("Name", "Algorithm", "Operation", "Timestamp", "Action"), show="headings")
+        self.file_table = ttk.Treeview(root, columns=("Name", "Algorithm", "Filesize", "Timestamp"), show="headings")
         self.file_table.heading("Name", text="File Name")
         self.file_table.heading("Algorithm", text="Algorithm")
-        self.file_table.heading("Operation", text="Operation")
+        self.file_table.heading("Filesize", text="Filesize (KB)")
         self.file_table.heading("Timestamp", text="Timestamp")
-        self.file_table.heading("Action", text="Action")
         self.file_table.pack(pady=10, fill=tk.BOTH, expand=True)
 
         # View/Decode Button
         self.decode_button = tk.Button(root, text="View", command=self.decode_selected)
         self.decode_button.pack(pady=5)
+
+        # Delete Button
+        self.delete_button = tk.Button(root, text="Delete Selected", command=self.delete_selected)
+        self.delete_button.pack(pady=5)
 
         # Populate file table on startup
         self.load_file_table()
@@ -84,7 +88,42 @@ class SteganographyApp:
         """Load file records into the table."""
         self.file_table.delete(*self.file_table.get_children())
         for record in get_all_files():
-            self.file_table.insert("", "end", values=(record[1], record[2], record[3], record[4], "View/Decode"))
+            file_name, algorithm, timestamp, encoded_text = record[1], record[2], record[4], record[5]
+            size_kb = len(encoded_text.encode('utf-8')) / 1024
+            self.file_table.insert("", "end", values=(file_name, algorithm, timestamp, f"{size_kb:.2f}"))
+
+    def delete_selected(self):
+        """Delete selected record from database and table."""
+        selected_item = self.file_table.selection()
+        if not selected_item:
+            messagebox.showwarning("Selection Error", "Please select a record to delete.")
+            return
+
+        file_name, algorithm = self.file_table.item(selected_item, "values")[0:2]
+
+        confirm = messagebox.askyesno("Confirm Deletion", f"Are you sure you want to delete '{file_name}' using {algorithm}?")
+        if not confirm:
+            return
+
+        # Delete from database and memory
+        try:
+            # Optional: also delete from bit_memory
+            if file_name + algorithm in self.bit_memory:
+                del self.bit_memory[file_name + algorithm]
+                with open("bit_memory.pkl", "wb") as f:
+                    pickle.dump(self.bit_memory, f)
+
+            # Delete from DB
+            conn = sqlite3.connect("steganography.db")
+            cursor = conn.cursor()
+            cursor.execute("DELETE FROM file_history WHERE file_name = ? AND algorithm = ?", (file_name, algorithm))
+            conn.commit()
+            conn.close()
+
+            self.file_table.delete(selected_item)
+            messagebox.showinfo("Deleted", "Record successfully deleted.")
+        except Exception as e:
+            messagebox.showerror("Deletion Error", f"Could not delete record: {e}")
 
     def upload_and_encode(self):
         """Upload a file and start encoding."""
@@ -140,11 +179,12 @@ class SteganographyApp:
                             progress['value'] = encoder.step() * 100
 
                         encoded_text = encoder.output
-                        save_file_record(file_name, algorithm, "encode", encoded_text)
+                        save_file_record(file_name, algorithm, "Encode", encoded_text, self.file_path)
                         self.bit_memory[file_name+algorithm] = bitstream
                         with open("bit_memory.pkl", "wb") as f:
                             pickle.dump(self.bit_memory, f)
-                        self.file_table.insert("", "end", values=(file_name, algorithm, "encode", time.strftime("%Y-%m-%d %H:%M:%S"), "View/Decode"))
+                        filesize_kb = os.path.getsize(self.file_path) // 1024
+                        self.file_table.insert("", "end", values=(file_name, algorithm, f"{filesize_kb} KB", time.strftime("%Y-%m-%d %H:%M:%S")))
 
                     except Exception as e:
                         messagebox.showerror("Encoding Error", f"Error during encoding: {str(e)}")

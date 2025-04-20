@@ -17669,7 +17669,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  * 
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:             # <<<<<<<<<<<<<<
  *             self.finished = True
- *             return
+ *             return 1
  */
   __pyx_t_2 = __pyx_v_self->stega_text;
   __Pyx_INCREF(__pyx_t_2);
@@ -17694,7 +17694,7 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  * 
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
  *             self.finished = True             # <<<<<<<<<<<<<<
- *             return
+ *             return 1
  * 
  */
     __pyx_v_self->finished = 1;
@@ -17702,12 +17702,13 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
     /* "thesis_toolkit.pyx":500
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
  *             self.finished = True
- *             return             # <<<<<<<<<<<<<<
+ *             return 1             # <<<<<<<<<<<<<<
  * 
  *         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+    __Pyx_INCREF(__pyx_int_1);
+    __pyx_r = __pyx_int_1;
     goto __pyx_L0;
 
     /* "thesis_toolkit.pyx":498
@@ -17715,12 +17716,12 @@ static PyObject *__pyx_pf_14thesis_toolkit_15ExistingDecoder_2step(struct __pyx_
  * 
  *         if self.index >= len(self.stega_text) - 1 and not self.exhausted:             # <<<<<<<<<<<<<<
  *             self.finished = True
- *             return
+ *             return 1
  */
   }
 
   /* "thesis_toolkit.pyx":502
- *             return
+ *             return 1
  * 
  *         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"             # <<<<<<<<<<<<<<
  *         if self.exhausted:

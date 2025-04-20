@@ -1,5 +1,6 @@
 # Ignore venv files
 venv/
+build/
 
 # Ignore markov models
 markov_models/
