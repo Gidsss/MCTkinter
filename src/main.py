@@ -4,6 +4,7 @@ import time
 import logging
 import threading
 import tkinter as tk
+import pickle
 from tkinter import filedialog, messagebox, ttk, scrolledtext
 from tqdm import tqdm
 
@@ -69,6 +70,16 @@ class SteganographyApp:
         # Populate file table on startup
         self.load_file_table()
 
+        # For temp storage of original bit streams
+        self.bit_memory = {}
+
+        if os.path.exists("bit_memory.pkl"):
+            with open("bit_memory.pkl", "rb") as f:
+                self.bit_memory = pickle.load(f)
+        else:
+            with open("bit_memory.pkl", "wb") as f:
+                pickle.dump(self.bit_memory, f)
+
     def load_file_table(self):
         """Load file records into the table."""
         self.file_table.delete(*self.file_table.get_children())
@@ -103,86 +114,36 @@ class SteganographyApp:
                 progress_bar.pack(pady=10)
 
                 start_time = time.time()
-                progress = {
-                    'value': 0,
-                    'finished': False,
-                    'finished_ui': False,
-                    'started': True,
-                    'paused_at_99': False
-                }
+                progress = {'value': 0}
 
                 def update_progress_bar():
-                    if not progress.get('started') or not progress_window.winfo_exists():
+                    elapsed_time = time.time() - start_time
+
+                    # Once finished, destroy window and quit loop
+                    if progress['value'] == 100:
+                        messagebox.showinfo("Encoding Complete", f"Encoding finished.\nTime Elapsed: {elapsed_time:.2f} seconds")
+                        progress_window.destroy()
                         return
 
-                    elapsed = time.time() - start_time
-                    current_value = progress_bar['value']
-                    target_value = progress['value']
+                    # Update time and percent labels
+                    time_label.config(text=f"Time Elapsed: {elapsed_time:.2f} seconds | {progress['value']:.2f}%")
 
-                    if target_value > current_value:
-                        # Pause at 99% 
-                        if target_value == 100 and current_value >= 98 and not progress['paused_at_99']:
-                            progress['paused_at_99'] = True
-                            progress_bar['value'] = 99
-                            time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | 99%")
-
-                            def resume_to_100():
-                                if progress_window.winfo_exists():
-                                    progress_bar['value'] = 100
-                                    time_label.config(text=f"Time Elapsed: {time.time() - start_time:.2f} seconds | 100%")
-                                    progress_window.update_idletasks()
-
-                                    # Delay UI finalization and messagebox slightly to show 100%
-                                    def finalize():
-                                        if progress_window.winfo_exists():
-                                            messagebox.showinfo("Encoding Complete", f"Encoding finished.\nTime Elapsed: {time.time() - start_time:.2f} seconds")
-                                            progress_window.destroy()
-
-                                    progress['finished_ui'] = True
-                                    self.root.after(300, finalize)
-
-                            self.root.after(500, resume_to_100)
-                            return
-
-                        new_value = min(current_value + 1, target_value)
-                        progress_bar['value'] = new_value
-                        time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | {new_value}%")
-
-                    elif target_value == 100 and current_value == 100 and not progress['finished_ui']:
-                        progress['finished_ui'] = True
-
+                    # Update progress bar
+                    progress_bar['value'] = progress['value']
                     progress_window.update_idletasks()
-
-                    if not progress.get('finished_ui'):
-                        self.root.after(100, update_progress_bar)
+                    self.root.after(100, update_progress_bar)
 
                 def encode_task():
                     try:
                         encoder = ExistingEncoder(model, bitstream) if algorithm == "Existing Algorithm" else EnhancedEncoder(model, bitstream)
-                        initial_estimated_steps = max(1, len(bitstream) // 8)
-                        estimated_steps = initial_estimated_steps
-                        current_step = 0
-
                         while not encoder.finished:
-                            encoder.step()
-                            current_step += 1
-
-                            if current_step >= estimated_steps and not encoder.finished:
-                                estimated_steps += int(estimated_steps * 0.1)
-
-                            raw_progress = int((current_step / initial_estimated_steps) * 100)
-                            progress['value'] = min(raw_progress, 100)
-
-                        # Final update
-                        progress['value'] = 100
-                        progress['finished'] = True
-                        progress['finished_ui'] = False
-                        progress['started'] = True
+                            progress['value'] = encoder.step() * 100
 
                         encoded_text = encoder.output
-                        elapsed = time.time() - start_time
-
                         save_file_record(file_name, algorithm, "encode", encoded_text)
+                        self.bit_memory[file_name+algorithm] = bitstream
+                        with open("bit_memory.pkl", "wb") as f:
+                            pickle.dump(self.bit_memory, f)
                         self.file_table.insert("", "end", values=(file_name, algorithm, "encode", time.strftime("%Y-%m-%d %H:%M:%S"), "View/Decode"))
 
                     except Exception as e:
@@ -191,6 +152,7 @@ class SteganographyApp:
                         progress['finished'] = True
                         if progress_window.winfo_exists():
                             progress_window.destroy()
+
 
                 self.root.after(500, update_progress_bar)
                 threading.Thread(target=encode_task, daemon=True).start()
@@ -206,10 +168,10 @@ class SteganographyApp:
             messagebox.showwarning("Selection Error", "Please select a file from the table.")
             return
 
-        file_name = self.file_table.item(selected_item, "values")[0]
+        file_name, algorithm = self.file_table.item(selected_item, "values")[:2]
 
         try:
-            encoded_text = get_encoded_text(file_name, "encode")
+            encoded_text = get_encoded_text(file_name, algorithm)
             if not encoded_text:
                 messagebox.showwarning("Data Not Found", "Encoded text not found in the database.")
                 return
@@ -278,7 +240,8 @@ class SteganographyApp:
 
     def start_decoding_with_progress(self, encoded_text, file_name):
         """Decode with progress bar and display result file + metrics."""
-        algorithm = self.algorithm.get()
+        selected_item = self.file_table.selection()
+        algorithm = self.file_table.item(selected_item, "values")[1]
 
         progress_window = tk.Toplevel(self.root)
         progress_window.title("Decoding Progress")
@@ -293,38 +256,41 @@ class SteganographyApp:
         progress_bar = ttk.Progressbar(progress_window, length=300, mode="determinate")
         progress_bar.pack(pady=10)
 
-        progress = {'value': 0, 'finished': False}
+        progress = {'value': 0}
         start_time = time.time()
 
         def update_progress_bar():
-            if progress['finished']:
+            elapsed_time = time.time() - start_time
+
+            if progress['value'] == 100:
+                progress_window.destroy()
                 return
-            elapsed = time.time() - start_time
+            
+            # Update time and percent labels
+            time_label.config(text=f"Time Elapsed: {elapsed_time:.2f} seconds | {progress['value']:.2f}%")
+
+            # Update progress bar
             progress_bar['value'] = progress['value']
-            time_label.config(text=f"Time Elapsed: {elapsed:.2f} seconds | {progress['value']}%")
             self.root.update_idletasks()
             self.root.after(100, update_progress_bar)
 
         def decode_task():
             try:
+                selected_item = self.file_table.selection()
+                file_name = self.file_table.item(selected_item, "values")[0]
+
                 decoder = ExistingDecoder(model, encoded_text) if algorithm == "Existing Algorithm" else EnhancedDecoder(model, encoded_text)
-                total_tokens = len(encoded_text.split(" "))
-                decoded_bits = ""
-
                 while not decoder.finished:
-                    decoder.step()
-                    progress['value'] = min(int((decoder.index / total_tokens) * 100), 100)
+                    progress['value'] = decoder.step() * 100
 
-                decoded_bits = decoder.solve()
-                elapsed = time.time() - start_time
-
-                output_path = os.path.join(OUTPUT_DIR, f"decoded_{file_name}")
+                decoded_bits = decoder.output
+                output_path = os.path.join(OUTPUT_DIR, f"decoded_{algorithm.split(" ")[0].lower()}_{file_name}")
                 bitstream_to_file(decoded_bits, output_path)
 
-                progress['value'] = 100
-                progress['finished'] = True
-                progress_window.destroy()
-                self.show_decoded_file(output_path, elapsed)
+                elapsed = time.time() - start_time
+                encoded_size = len(encoded_text) * 8
+                original_bits = self.bit_memory[file_name+algorithm]
+                self.show_decoded_file(output_path, elapsed, encoded_size, original_bits, decoded_bits)
 
             except Exception as e:
                 progress_window.destroy()
@@ -334,7 +300,7 @@ class SteganographyApp:
         self.root.after(100, update_progress_bar)
         threading.Thread(target=decode_task, daemon=True).start()
 
-    def show_decoded_file(self, filepath, elapsed):
+    def show_decoded_file(self, filepath, elapsed, encoded_size, original_bits, decoded_bits):
         """Display decoded file metrics and success info."""
         window = tk.Toplevel(self.root)
         window.title("Decoded File and Metrics")
@@ -346,14 +312,56 @@ class SteganographyApp:
         metrics_frame = tk.Frame(window)
         metrics_frame.pack(pady=5)
 
-        tk.Label(metrics_frame, text="Decoding Speed:", anchor="w", width=25).grid(row=0, column=0, sticky="w")
-        tk.Label(metrics_frame, text="Placeholder").grid(row=0, column=1, sticky="w")
-
+        original_size = os.path.getsize(filepath)
+        embedding_rate = original_size / encoded_size * 100
         tk.Label(metrics_frame, text="Embedding Rate:", anchor="w", width=25).grid(row=1, column=0, sticky="w")
-        tk.Label(metrics_frame, text="Placeholder").grid(row=1, column=1, sticky="w")
+        tk.Label(metrics_frame, text=f"{embedding_rate:0.2f}%").grid(row=1, column=1, sticky="w")
 
+        validity = validate_bitstreams(original_bits, decoded_bits)
+        validity_string = "Valid" if len(validity) == 0 else "Invalid"
         tk.Label(metrics_frame, text="Validity Check:", anchor="w", width=25).grid(row=2, column=0, sticky="w")
-        tk.Label(metrics_frame, text="Placeholder").grid(row=2, column=1, sticky="w")
+        tk.Label(metrics_frame, text=validity_string).grid(row=2, column=1, sticky="w")
+
+        # Create two text widgets displaying the two bit streams
+        # Pad spaces to shorter bit stream
+        if len(original_bits) < len(decoded_bits):
+            original_bits += " " * (len(decoded_bits) - len(original_bits))
+        else:
+            decoded_bits += " " * (len(original_bits) - len(decoded_bits))
+        # Truncate the bitstreams to a max of 10000 bits, getting the second portion
+        original_bits = original_bits[-10000:]
+        decoded_bits = decoded_bits[-10000:]
+
+        text_area1 = tk.Text(window, width=10, height=1, wrap="none", pady=0)
+        text_area2 = tk.Text(window, width=10, height=1, wrap="none", pady=0)
+        text_area1.insert("1.0", original_bits)
+        text_area2.insert("1.0", decoded_bits)
+        text_area1.config(state="disabled")
+        text_area2.config(state="disabled")
+        tk.Label(window, text="Original Bits:").pack()
+        text_area1.pack(side="top", fill="both", expand=True)
+        tk.Label(window, text="Decoded Bits:").pack()
+        text_area2.pack(side="top", fill="both", expand=True)
+
+        # Initialize tag
+        text_area1.tag_config("match", background="palegreen")
+        text_area1.tag_config("mismatch", background="tomato")
+        text_area2.tag_config("match", background="palegreen")
+        text_area2.tag_config("mismatch", background="tomato")
+
+        # Color matching and mismatching bits
+        text_area1.tag_add("match", "1.0", tk.END)
+        text_area2.tag_add("match", "1.0", tk.END)
+
+        for index in validity:
+            text_area1.tag_add("mismatch", f"1.{index}", f"1.{index+1}")
+            text_area2.tag_add("mismatch", f"1.{index}", f"1.{index+1}")
+
+        # Create a horizontal scrollbar
+        scrollbar = tk.Scrollbar(window, orient="horizontal")
+        scrollbar.pack(fill="x")
+        # Configure the scrollbar to control both text areas
+        scrollbar.config(command=lambda *args: [text_area1.xview(*args), text_area2.xview(*args)])
 
         open_btn = tk.Button(window, text="Open File", command=lambda: os.startfile(filepath))
         open_btn.pack(pady=10)

@@ -497,7 +497,7 @@ cdef class ExistingDecoder:
 
         if self.index >= len(self.stega_text) - 1 and not self.exhausted:
             self.finished = True
-            return
+            return 1
 
         previous = self.output if len(self.output) <= char_limit else "...{self.output[-char_limit:]}"
         if self.exhausted:
